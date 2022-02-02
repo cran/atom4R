@@ -1,4 +1,4 @@
-e6481d3644cac6bed14e2c88f1ec6537 *DESCRIPTION
+a2386f72bd7426b0695dec4dd694b1a1 *DESCRIPTION
 4caa500961350433282ac48a5dcdd452 *LICENSE
 e54dd5010766f20a2e2aa4c8ab91cb4f *NAMESPACE
 c70aefd7f3ded7bc115b128a851b54dd *R/AtomAbstractObject.R
@@ -12,7 +12,7 @@ a19b5fa164cec432fc44f7ad5f92c6de *R/AtomPerson.R
 47a405e692a36bb32853c203cd898e5d *R/AtomSchemas.R
 41e5a31fa437b0f198a87c5d3d4d1139 *R/DCElement.R
 ae78d932a39aece8e36b0dc3afab0517 *R/DCEntry.R
-2fe31e9304cf0ce723354fce27c91574 *R/DCMIVocabulary.R
+53636030e3e4df19be6290ade73f3f0e *R/DCMIVocabulary.R
 319e719d5bd7936282678947a5232c10 *R/SwordClient.R
 8dba346eabfd0ae14a5f48ff1f58e578 *R/SwordDataverseClient.R
 7ac4c52888709f4c0a359c39a0ae7a00 *R/SwordHalClient.R
@@ -25,6 +25,8 @@ ac362f586893a1bc9eab8504b8c399fc *R/atom4R_logger.R
 ce9a7892c35fb40d1ddb580c7492c0f6 *inst/extdata/schemas/dc/dc.xsd
 77d50a7e6674a6fe882fb62fc21f5f85 *inst/extdata/schemas/dc/dcmitype.xsd
 7aedee692d76569ae39dcf17cd00f753 *inst/extdata/schemas/dc/dcterms.xsd
+60fe93118b817beeb2933d31fa439f43 *inst/extdata/vocabularies/dc/dublin_core_terms.rdf
+6ff992991c5ea9330532903ab2e37ea2 *inst/extdata/vocabularies/dc/dublin_core_type.rdf
 fb10659d4c60a5c5726d915740d17141 *man/AtomAbstractObject.Rd
 ff0ac065b4c29ec49e4e26022fee649d *man/AtomAuthor.Rd
 d31ecc09925a0b2a475982401270f5a1 *man/AtomCategory.Rd
