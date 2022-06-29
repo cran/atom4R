@@ -1,4 +1,22 @@
-## [atom4R 0.2](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-unavailable-red.svg)](https://github.com/eblondel/atom4R)
+## [atom4R 0.3](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://github.com/eblondel/atom4R)
+
+**Enhancements**
+
+* [#14](https://github.com/eblondel/atom4R/issues/14) Support setters for list of elements
+* [#16](https://github.com/eblondel/atom4R/issues/16) Add missing DCMI elements
+* [#18](https://github.com/eblondel/atom4R/issues/18) Improve performance for `addDCElement` (for native DC elements)
+* [#19](https://github.com/eblondel/atom4R/issues/18) Fetch vocabulary data by default
+
+**New features**
+
+* [#15](https://github.com/eblondel/atom4R/issues/15) Accessors/getters for DCElement objects
+* [#20](https://github.com/eblondel/atom4R/issues/20) Add readDCEntry util function
+
+**Bug fixes**
+
+* [#17](https://github.com/eblondel/atom4R/issues/17) Bug in AtomEntry 'updated' field
+
+## [atom4R 0.2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **New features**
 
@@ -13,7 +31,7 @@
 * [#9](https://github.com/eblondel/atom4R/issues/9) DCElement classes not listed when namespace not loaded
 
 
-## [atom4R 0.1-2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
+## [atom4R 0.1-2](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.1-2.tar.gz) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.1-2.tar.gz)
 
 **Enhancements**
 

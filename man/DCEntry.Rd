@@ -46,6 +46,15 @@ DCEntry
   dcentry$addDCSource("Guidelines for implementing Dublin Core in XML")
   dcentry$addDCLicense("NONE")
   dcentry$addDCRights("MIT License")
+  dcentry$addDCHasPart("part1")
+  dcentry$addDCHasPart("part2")
+  dcentry$addDCHasVersion("0.2")
+  dcentry$addDCIsPartOf("CRAN")
+  dcentry$addDCIsPartOf("GitHub")
+  dcentry$addDCIsReferencedBy("CRAN")
+  dcentry$addDCIsReferencedBy("GitHub")
+  dcentry$addDCIsRequiredBy("zen4R")
+  dcentry$addDCIsRequiredBy("cloud4R")
 
   xml <- dcentry$encode()
 
@@ -68,147 +77,254 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{DCEntry$new()}}
-\item \href{#method-addDCElement}{\code{DCEntry$addDCElement()}}
-\item \href{#method-delDCElement}{\code{DCEntry$delDCElement()}}
-\item \href{#method-addDCAbstract}{\code{DCEntry$addDCAbstract()}}
-\item \href{#method-delDCAbstract}{\code{DCEntry$delDCAbstract()}}
-\item \href{#method-addDCAccessRights}{\code{DCEntry$addDCAccessRights()}}
-\item \href{#method-delDCAccessRights}{\code{DCEntry$delDCAccessRights()}}
-\item \href{#method-addDCAccrualMethod}{\code{DCEntry$addDCAccrualMethod()}}
-\item \href{#method-delDCAccrualMethod}{\code{DCEntry$delDCAccrualMethod()}}
-\item \href{#method-addDCAccrualPeriodicity}{\code{DCEntry$addDCAccrualPeriodicity()}}
-\item \href{#method-delDCAccrualPeriodicity}{\code{DCEntry$delDCAccrualPeriodicity()}}
-\item \href{#method-addDCAccrualPolicy}{\code{DCEntry$addDCAccrualPolicy()}}
-\item \href{#method-delDCAccrualPolicy}{\code{DCEntry$delDCAccrualPolicy()}}
-\item \href{#method-addDCAlternative}{\code{DCEntry$addDCAlternative()}}
-\item \href{#method-delDCAlternative}{\code{DCEntry$delDCAlternative()}}
-\item \href{#method-addDCAudience}{\code{DCEntry$addDCAudience()}}
-\item \href{#method-delDCAudience}{\code{DCEntry$delDCAudience()}}
-\item \href{#method-addDCAvailable}{\code{DCEntry$addDCAvailable()}}
-\item \href{#method-delDCAvailable}{\code{DCEntry$delDCAvailable()}}
-\item \href{#method-addDCBibliographicCitation}{\code{DCEntry$addDCBibliographicCitation()}}
-\item \href{#method-delDCBibliographicCitation}{\code{DCEntry$delDCBibliographicCitation()}}
-\item \href{#method-addDCConformsTo}{\code{DCEntry$addDCConformsTo()}}
-\item \href{#method-delDCConformsTo}{\code{DCEntry$delDCConformsTo()}}
-\item \href{#method-addDCContributor}{\code{DCEntry$addDCContributor()}}
-\item \href{#method-delDCContributor}{\code{DCEntry$delDCContributor()}}
-\item \href{#method-addDCCoverage}{\code{DCEntry$addDCCoverage()}}
-\item \href{#method-delDCCoverage}{\code{DCEntry$delDCCoverage()}}
-\item \href{#method-addDCCreated}{\code{DCEntry$addDCCreated()}}
-\item \href{#method-delDCCreated}{\code{DCEntry$delDCCreated()}}
-\item \href{#method-addDCCreator}{\code{DCEntry$addDCCreator()}}
-\item \href{#method-delDCCreator}{\code{DCEntry$delDCCreator()}}
-\item \href{#method-addDCDate}{\code{DCEntry$addDCDate()}}
-\item \href{#method-delDCDate}{\code{DCEntry$delDCDate()}}
-\item \href{#method-addDCDateAccepted}{\code{DCEntry$addDCDateAccepted()}}
-\item \href{#method-delDCDateAccepted}{\code{DCEntry$delDCDateAccepted()}}
-\item \href{#method-addDCDateCopyrighted}{\code{DCEntry$addDCDateCopyrighted()}}
-\item \href{#method-delDCDateCopyrighted}{\code{DCEntry$delDCDateCopyrighted()}}
-\item \href{#method-addDCDateSubmitted}{\code{DCEntry$addDCDateSubmitted()}}
-\item \href{#method-delDCDateSubmitted}{\code{DCEntry$delDCDateSubmitted()}}
-\item \href{#method-addDCDescription}{\code{DCEntry$addDCDescription()}}
-\item \href{#method-delDCDescription}{\code{DCEntry$delDCDescription()}}
-\item \href{#method-addDCEducationalLevel}{\code{DCEntry$addDCEducationalLevel()}}
-\item \href{#method-delDCEducationalLevel}{\code{DCEntry$delDCEducationalLevel()}}
-\item \href{#method-addDCExtent}{\code{DCEntry$addDCExtent()}}
-\item \href{#method-delDCExtent}{\code{DCEntry$delDCExtent()}}
-\item \href{#method-addDCFormat}{\code{DCEntry$addDCFormat()}}
-\item \href{#method-delDCFormat}{\code{DCEntry$delDCFormat()}}
-\item \href{#method-addDCIdentifier}{\code{DCEntry$addDCIdentifier()}}
-\item \href{#method-delDCIdentifier}{\code{DCEntry$delDCIdentifier()}}
-\item \href{#method-addDCInstructionalMethod}{\code{DCEntry$addDCInstructionalMethod()}}
-\item \href{#method-delDCInstructionalMethod}{\code{DCEntry$delDCInstructionalMethod()}}
-\item \href{#method-addDCIssued}{\code{DCEntry$addDCIssued()}}
-\item \href{#method-delDCIssued}{\code{DCEntry$delDCIssued()}}
-\item \href{#method-addDCLanguage}{\code{DCEntry$addDCLanguage()}}
-\item \href{#method-delDCLanguage}{\code{DCEntry$delDCLanguage()}}
-\item \href{#method-addDCLicense}{\code{DCEntry$addDCLicense()}}
-\item \href{#method-delDCLicense}{\code{DCEntry$delDCLicense()}}
-\item \href{#method-addDCMediator}{\code{DCEntry$addDCMediator()}}
-\item \href{#method-delDCMediator}{\code{DCEntry$delDCMediator()}}
-\item \href{#method-addDCMedium}{\code{DCEntry$addDCMedium()}}
-\item \href{#method-delDCMedium}{\code{DCEntry$delDCMedium()}}
-\item \href{#method-addDCModified}{\code{DCEntry$addDCModified()}}
-\item \href{#method-delDCModified}{\code{DCEntry$delDCModified()}}
-\item \href{#method-addDCProvenance}{\code{DCEntry$addDCProvenance()}}
-\item \href{#method-delDCProvenance}{\code{DCEntry$delDCProvenance()}}
-\item \href{#method-addDCPublisher}{\code{DCEntry$addDCPublisher()}}
-\item \href{#method-delDCPublisher}{\code{DCEntry$delDCPublisher()}}
-\item \href{#method-addDCReferences}{\code{DCEntry$addDCReferences()}}
-\item \href{#method-delDCReferences}{\code{DCEntry$delDCReferences()}}
-\item \href{#method-addDCRelation}{\code{DCEntry$addDCRelation()}}
-\item \href{#method-delDCRelation}{\code{DCEntry$delDCRelation()}}
-\item \href{#method-addDCReplaces}{\code{DCEntry$addDCReplaces()}}
-\item \href{#method-delDCReplaces}{\code{DCEntry$delDCReplaces()}}
-\item \href{#method-addDCRequires}{\code{DCEntry$addDCRequires()}}
-\item \href{#method-delDCRequires}{\code{DCEntry$delDCRequires()}}
-\item \href{#method-addDCRights}{\code{DCEntry$addDCRights()}}
-\item \href{#method-delDCRights}{\code{DCEntry$delDCRights()}}
-\item \href{#method-addDCRightsHolder}{\code{DCEntry$addDCRightsHolder()}}
-\item \href{#method-delDCRightsHolder}{\code{DCEntry$delDCRightsHolder()}}
-\item \href{#method-addDCSource}{\code{DCEntry$addDCSource()}}
-\item \href{#method-delDCSource}{\code{DCEntry$delDCSource()}}
-\item \href{#method-addDCSubject}{\code{DCEntry$addDCSubject()}}
-\item \href{#method-delDCSubject}{\code{DCEntry$delDCSubject()}}
-\item \href{#method-addDCTableOfContents}{\code{DCEntry$addDCTableOfContents()}}
-\item \href{#method-delDCTableOfContents}{\code{DCEntry$delDCTableOfContents()}}
-\item \href{#method-addDCTemporal}{\code{DCEntry$addDCTemporal()}}
-\item \href{#method-delDCTemporal}{\code{DCEntry$delDCTemporal()}}
-\item \href{#method-addDCTitle}{\code{DCEntry$addDCTitle()}}
-\item \href{#method-delDCTitle}{\code{DCEntry$delDCTitle()}}
-\item \href{#method-addDCType}{\code{DCEntry$addDCType()}}
-\item \href{#method-delDCType}{\code{DCEntry$delDCType()}}
-\item \href{#method-clone}{\code{DCEntry$clone()}}
+\item \href{#method-DCEntry-new}{\code{DCEntry$new()}}
+\item \href{#method-DCEntry-addDCElement}{\code{DCEntry$addDCElement()}}
+\item \href{#method-DCEntry-delDCElement}{\code{DCEntry$delDCElement()}}
+\item \href{#method-DCEntry-setDCElements}{\code{DCEntry$setDCElements()}}
+\item \href{#method-DCEntry-getDCElements}{\code{DCEntry$getDCElements()}}
+\item \href{#method-DCEntry-getDCElementByValue}{\code{DCEntry$getDCElementByValue()}}
+\item \href{#method-DCEntry-addDCAbstract}{\code{DCEntry$addDCAbstract()}}
+\item \href{#method-DCEntry-delDCAbstract}{\code{DCEntry$delDCAbstract()}}
+\item \href{#method-DCEntry-setDCAbstracts}{\code{DCEntry$setDCAbstracts()}}
+\item \href{#method-DCEntry-getDCAbstracts}{\code{DCEntry$getDCAbstracts()}}
+\item \href{#method-DCEntry-addDCAccessRights}{\code{DCEntry$addDCAccessRights()}}
+\item \href{#method-DCEntry-delDCAccessRights}{\code{DCEntry$delDCAccessRights()}}
+\item \href{#method-DCEntry-setDCAccessRights}{\code{DCEntry$setDCAccessRights()}}
+\item \href{#method-DCEntry-getDCAccessRights}{\code{DCEntry$getDCAccessRights()}}
+\item \href{#method-DCEntry-addDCAccrualMethod}{\code{DCEntry$addDCAccrualMethod()}}
+\item \href{#method-DCEntry-delDCAccrualMethod}{\code{DCEntry$delDCAccrualMethod()}}
+\item \href{#method-DCEntry-setDCAccrualMethods}{\code{DCEntry$setDCAccrualMethods()}}
+\item \href{#method-DCEntry-getDCAccrualMethods}{\code{DCEntry$getDCAccrualMethods()}}
+\item \href{#method-DCEntry-addDCAccrualPeriodicity}{\code{DCEntry$addDCAccrualPeriodicity()}}
+\item \href{#method-DCEntry-delDCAccrualPeriodicity}{\code{DCEntry$delDCAccrualPeriodicity()}}
+\item \href{#method-DCEntry-setDCAccrualPeriodicities}{\code{DCEntry$setDCAccrualPeriodicities()}}
+\item \href{#method-DCEntry-getDCAccrualPeriodicities}{\code{DCEntry$getDCAccrualPeriodicities()}}
+\item \href{#method-DCEntry-addDCAccrualPolicy}{\code{DCEntry$addDCAccrualPolicy()}}
+\item \href{#method-DCEntry-delDCAccrualPolicy}{\code{DCEntry$delDCAccrualPolicy()}}
+\item \href{#method-DCEntry-setDCAccrualPolicies}{\code{DCEntry$setDCAccrualPolicies()}}
+\item \href{#method-DCEntry-getDCAccrualPolicies}{\code{DCEntry$getDCAccrualPolicies()}}
+\item \href{#method-DCEntry-addDCAlternative}{\code{DCEntry$addDCAlternative()}}
+\item \href{#method-DCEntry-delDCAlternative}{\code{DCEntry$delDCAlternative()}}
+\item \href{#method-DCEntry-setDCAlternatives}{\code{DCEntry$setDCAlternatives()}}
+\item \href{#method-DCEntry-getDCAlternatives}{\code{DCEntry$getDCAlternatives()}}
+\item \href{#method-DCEntry-addDCAudience}{\code{DCEntry$addDCAudience()}}
+\item \href{#method-DCEntry-delDCAudience}{\code{DCEntry$delDCAudience()}}
+\item \href{#method-DCEntry-setDCAudiences}{\code{DCEntry$setDCAudiences()}}
+\item \href{#method-DCEntry-getDCAudiences}{\code{DCEntry$getDCAudiences()}}
+\item \href{#method-DCEntry-addDCAvailable}{\code{DCEntry$addDCAvailable()}}
+\item \href{#method-DCEntry-delDCAvailable}{\code{DCEntry$delDCAvailable()}}
+\item \href{#method-DCEntry-setDCAvailables}{\code{DCEntry$setDCAvailables()}}
+\item \href{#method-DCEntry-getDCAvailables}{\code{DCEntry$getDCAvailables()}}
+\item \href{#method-DCEntry-addDCBibliographicCitation}{\code{DCEntry$addDCBibliographicCitation()}}
+\item \href{#method-DCEntry-delDCBibliographicCitation}{\code{DCEntry$delDCBibliographicCitation()}}
+\item \href{#method-DCEntry-setDCBibliographicCitations}{\code{DCEntry$setDCBibliographicCitations()}}
+\item \href{#method-DCEntry-getDCBibliographicCitations}{\code{DCEntry$getDCBibliographicCitations()}}
+\item \href{#method-DCEntry-addDCConformsTo}{\code{DCEntry$addDCConformsTo()}}
+\item \href{#method-DCEntry-delDCConformsTo}{\code{DCEntry$delDCConformsTo()}}
+\item \href{#method-DCEntry-setDCConformsTo}{\code{DCEntry$setDCConformsTo()}}
+\item \href{#method-DCEntry-getDCConformsTo}{\code{DCEntry$getDCConformsTo()}}
+\item \href{#method-DCEntry-addDCContributor}{\code{DCEntry$addDCContributor()}}
+\item \href{#method-DCEntry-delDCContributor}{\code{DCEntry$delDCContributor()}}
+\item \href{#method-DCEntry-setDCContributors}{\code{DCEntry$setDCContributors()}}
+\item \href{#method-DCEntry-getDCContributors}{\code{DCEntry$getDCContributors()}}
+\item \href{#method-DCEntry-addDCCoverage}{\code{DCEntry$addDCCoverage()}}
+\item \href{#method-DCEntry-delDCCoverage}{\code{DCEntry$delDCCoverage()}}
+\item \href{#method-DCEntry-setDCCoverages}{\code{DCEntry$setDCCoverages()}}
+\item \href{#method-DCEntry-getDCCoverages}{\code{DCEntry$getDCCoverages()}}
+\item \href{#method-DCEntry-addDCCreated}{\code{DCEntry$addDCCreated()}}
+\item \href{#method-DCEntry-delDCCreated}{\code{DCEntry$delDCCreated()}}
+\item \href{#method-DCEntry-addDCCreator}{\code{DCEntry$addDCCreator()}}
+\item \href{#method-DCEntry-delDCCreator}{\code{DCEntry$delDCCreator()}}
+\item \href{#method-DCEntry-setDCCreators}{\code{DCEntry$setDCCreators()}}
+\item \href{#method-DCEntry-getDCCreators}{\code{DCEntry$getDCCreators()}}
+\item \href{#method-DCEntry-addDCDate}{\code{DCEntry$addDCDate()}}
+\item \href{#method-DCEntry-delDCDate}{\code{DCEntry$delDCDate()}}
+\item \href{#method-DCEntry-setDCDates}{\code{DCEntry$setDCDates()}}
+\item \href{#method-DCEntry-getDCDates}{\code{DCEntry$getDCDates()}}
+\item \href{#method-DCEntry-addDCDateAccepted}{\code{DCEntry$addDCDateAccepted()}}
+\item \href{#method-DCEntry-delDCDateAccepted}{\code{DCEntry$delDCDateAccepted()}}
+\item \href{#method-DCEntry-addDCDateCopyrighted}{\code{DCEntry$addDCDateCopyrighted()}}
+\item \href{#method-DCEntry-delDCDateCopyrighted}{\code{DCEntry$delDCDateCopyrighted()}}
+\item \href{#method-DCEntry-addDCDateSubmitted}{\code{DCEntry$addDCDateSubmitted()}}
+\item \href{#method-DCEntry-delDCDateSubmitted}{\code{DCEntry$delDCDateSubmitted()}}
+\item \href{#method-DCEntry-addDCDescription}{\code{DCEntry$addDCDescription()}}
+\item \href{#method-DCEntry-delDCDescription}{\code{DCEntry$delDCDescription()}}
+\item \href{#method-DCEntry-setDCDescriptions}{\code{DCEntry$setDCDescriptions()}}
+\item \href{#method-DCEntry-getDCDescriptions}{\code{DCEntry$getDCDescriptions()}}
+\item \href{#method-DCEntry-addDCEducationalLevel}{\code{DCEntry$addDCEducationalLevel()}}
+\item \href{#method-DCEntry-delDCEducationalLevel}{\code{DCEntry$delDCEducationalLevel()}}
+\item \href{#method-DCEntry-setDCEducationalLevels}{\code{DCEntry$setDCEducationalLevels()}}
+\item \href{#method-DCEntry-getDCEducationalLevels}{\code{DCEntry$getDCEducationalLevels()}}
+\item \href{#method-DCEntry-addDCExtent}{\code{DCEntry$addDCExtent()}}
+\item \href{#method-DCEntry-delDCExtent}{\code{DCEntry$delDCExtent()}}
+\item \href{#method-DCEntry-setDCExtents}{\code{DCEntry$setDCExtents()}}
+\item \href{#method-DCEntry-getDCExtents}{\code{DCEntry$getDCExtents()}}
+\item \href{#method-DCEntry-addDCFormat}{\code{DCEntry$addDCFormat()}}
+\item \href{#method-DCEntry-delDCFormat}{\code{DCEntry$delDCFormat()}}
+\item \href{#method-DCEntry-setDCFormats}{\code{DCEntry$setDCFormats()}}
+\item \href{#method-DCEntry-getDCFormats}{\code{DCEntry$getDCFormats()}}
+\item \href{#method-DCEntry-addDCHasPart}{\code{DCEntry$addDCHasPart()}}
+\item \href{#method-DCEntry-delDCHasPart}{\code{DCEntry$delDCHasPart()}}
+\item \href{#method-DCEntry-setDCHasParts}{\code{DCEntry$setDCHasParts()}}
+\item \href{#method-DCEntry-getDCHasParts}{\code{DCEntry$getDCHasParts()}}
+\item \href{#method-DCEntry-addDCHasVersion}{\code{DCEntry$addDCHasVersion()}}
+\item \href{#method-DCEntry-delDCHasVersion}{\code{DCEntry$delDCHasVersion()}}
+\item \href{#method-DCEntry-setDCHasVersions}{\code{DCEntry$setDCHasVersions()}}
+\item \href{#method-DCEntry-getDCHasVersions}{\code{DCEntry$getDCHasVersions()}}
+\item \href{#method-DCEntry-addDCIdentifier}{\code{DCEntry$addDCIdentifier()}}
+\item \href{#method-DCEntry-delDCIdentifier}{\code{DCEntry$delDCIdentifier()}}
+\item \href{#method-DCEntry-setDCIdentifiers}{\code{DCEntry$setDCIdentifiers()}}
+\item \href{#method-DCEntry-getDCIdentifiers}{\code{DCEntry$getDCIdentifiers()}}
+\item \href{#method-DCEntry-addDCInstructionalMethod}{\code{DCEntry$addDCInstructionalMethod()}}
+\item \href{#method-DCEntry-delDCInstructionalMethod}{\code{DCEntry$delDCInstructionalMethod()}}
+\item \href{#method-DCEntry-setDCInstructionalMethods}{\code{DCEntry$setDCInstructionalMethods()}}
+\item \href{#method-DCEntry-getDCInstructionalMethods}{\code{DCEntry$getDCInstructionalMethods()}}
+\item \href{#method-DCEntry-addDCIsPartOf}{\code{DCEntry$addDCIsPartOf()}}
+\item \href{#method-DCEntry-delDCIsPartOf}{\code{DCEntry$delDCIsPartOf()}}
+\item \href{#method-DCEntry-setDCIsPartOf}{\code{DCEntry$setDCIsPartOf()}}
+\item \href{#method-DCEntry-getDCIsPartOfs}{\code{DCEntry$getDCIsPartOfs()}}
+\item \href{#method-DCEntry-addDCIsReferencedBy}{\code{DCEntry$addDCIsReferencedBy()}}
+\item \href{#method-DCEntry-delDCIsReferencedBy}{\code{DCEntry$delDCIsReferencedBy()}}
+\item \href{#method-DCEntry-setDCIsReferencedBys}{\code{DCEntry$setDCIsReferencedBys()}}
+\item \href{#method-DCEntry-getDCIsReferencedBys}{\code{DCEntry$getDCIsReferencedBys()}}
+\item \href{#method-DCEntry-addDCIsReplacedBy}{\code{DCEntry$addDCIsReplacedBy()}}
+\item \href{#method-DCEntry-delDCIsReplacedBy}{\code{DCEntry$delDCIsReplacedBy()}}
+\item \href{#method-DCEntry-setDCIsReplacedBys}{\code{DCEntry$setDCIsReplacedBys()}}
+\item \href{#method-DCEntry-getDCIsReplacedBys}{\code{DCEntry$getDCIsReplacedBys()}}
+\item \href{#method-DCEntry-addDCIsRequiredBy}{\code{DCEntry$addDCIsRequiredBy()}}
+\item \href{#method-DCEntry-delDCIsRequiredBy}{\code{DCEntry$delDCIsRequiredBy()}}
+\item \href{#method-DCEntry-setDCIsRequiredBys}{\code{DCEntry$setDCIsRequiredBys()}}
+\item \href{#method-DCEntry-getDCIsRequiredBys}{\code{DCEntry$getDCIsRequiredBys()}}
+\item \href{#method-DCEntry-addDCIsVersionOf}{\code{DCEntry$addDCIsVersionOf()}}
+\item \href{#method-DCEntry-delDCIsVersionOf}{\code{DCEntry$delDCIsVersionOf()}}
+\item \href{#method-DCEntry-setDCIsVersionOfs}{\code{DCEntry$setDCIsVersionOfs()}}
+\item \href{#method-DCEntry-getDCIsVersionOfs}{\code{DCEntry$getDCIsVersionOfs()}}
+\item \href{#method-DCEntry-addDCIssued}{\code{DCEntry$addDCIssued()}}
+\item \href{#method-DCEntry-delDCIssued}{\code{DCEntry$delDCIssued()}}
+\item \href{#method-DCEntry-addDCLanguage}{\code{DCEntry$addDCLanguage()}}
+\item \href{#method-DCEntry-delDCLanguage}{\code{DCEntry$delDCLanguage()}}
+\item \href{#method-DCEntry-setDCLanguages}{\code{DCEntry$setDCLanguages()}}
+\item \href{#method-DCEntry-getDCLanguages}{\code{DCEntry$getDCLanguages()}}
+\item \href{#method-DCEntry-addDCLicense}{\code{DCEntry$addDCLicense()}}
+\item \href{#method-DCEntry-delDCLicense}{\code{DCEntry$delDCLicense()}}
+\item \href{#method-DCEntry-setDCLicenses}{\code{DCEntry$setDCLicenses()}}
+\item \href{#method-DCEntry-getDCLicenses}{\code{DCEntry$getDCLicenses()}}
+\item \href{#method-DCEntry-addDCMediator}{\code{DCEntry$addDCMediator()}}
+\item \href{#method-DCEntry-delDCMediator}{\code{DCEntry$delDCMediator()}}
+\item \href{#method-DCEntry-setDCMediators}{\code{DCEntry$setDCMediators()}}
+\item \href{#method-DCEntry-getDCMediators}{\code{DCEntry$getDCMediators()}}
+\item \href{#method-DCEntry-addDCMedium}{\code{DCEntry$addDCMedium()}}
+\item \href{#method-DCEntry-delDCMedium}{\code{DCEntry$delDCMedium()}}
+\item \href{#method-DCEntry-setDCMediums}{\code{DCEntry$setDCMediums()}}
+\item \href{#method-DCEntry-getDCMediums}{\code{DCEntry$getDCMediums()}}
+\item \href{#method-DCEntry-addDCModified}{\code{DCEntry$addDCModified()}}
+\item \href{#method-DCEntry-delDCModified}{\code{DCEntry$delDCModified()}}
+\item \href{#method-DCEntry-addDCProvenance}{\code{DCEntry$addDCProvenance()}}
+\item \href{#method-DCEntry-delDCProvenance}{\code{DCEntry$delDCProvenance()}}
+\item \href{#method-DCEntry-setDCProvenances}{\code{DCEntry$setDCProvenances()}}
+\item \href{#method-DCEntry-getDCProvenances}{\code{DCEntry$getDCProvenances()}}
+\item \href{#method-DCEntry-addDCPublisher}{\code{DCEntry$addDCPublisher()}}
+\item \href{#method-DCEntry-delDCPublisher}{\code{DCEntry$delDCPublisher()}}
+\item \href{#method-DCEntry-setDCPublishers}{\code{DCEntry$setDCPublishers()}}
+\item \href{#method-DCEntry-getDCPublishers}{\code{DCEntry$getDCPublishers()}}
+\item \href{#method-DCEntry-addDCReferences}{\code{DCEntry$addDCReferences()}}
+\item \href{#method-DCEntry-delDCReferences}{\code{DCEntry$delDCReferences()}}
+\item \href{#method-DCEntry-setDCReferences}{\code{DCEntry$setDCReferences()}}
+\item \href{#method-DCEntry-getDCReferences}{\code{DCEntry$getDCReferences()}}
+\item \href{#method-DCEntry-addDCRelation}{\code{DCEntry$addDCRelation()}}
+\item \href{#method-DCEntry-delDCRelation}{\code{DCEntry$delDCRelation()}}
+\item \href{#method-DCEntry-setDCRelations}{\code{DCEntry$setDCRelations()}}
+\item \href{#method-DCEntry-getDCRelations}{\code{DCEntry$getDCRelations()}}
+\item \href{#method-DCEntry-addDCReplaces}{\code{DCEntry$addDCReplaces()}}
+\item \href{#method-DCEntry-delDCReplaces}{\code{DCEntry$delDCReplaces()}}
+\item \href{#method-DCEntry-setDCReplaces}{\code{DCEntry$setDCReplaces()}}
+\item \href{#method-DCEntry-getDCReplaces}{\code{DCEntry$getDCReplaces()}}
+\item \href{#method-DCEntry-addDCRequires}{\code{DCEntry$addDCRequires()}}
+\item \href{#method-DCEntry-delDCRequires}{\code{DCEntry$delDCRequires()}}
+\item \href{#method-DCEntry-setDCRequires}{\code{DCEntry$setDCRequires()}}
+\item \href{#method-DCEntry-getDCRequires}{\code{DCEntry$getDCRequires()}}
+\item \href{#method-DCEntry-addDCRights}{\code{DCEntry$addDCRights()}}
+\item \href{#method-DCEntry-delDCRights}{\code{DCEntry$delDCRights()}}
+\item \href{#method-DCEntry-setDCRights}{\code{DCEntry$setDCRights()}}
+\item \href{#method-DCEntry-getDCRights}{\code{DCEntry$getDCRights()}}
+\item \href{#method-DCEntry-addDCRightsHolder}{\code{DCEntry$addDCRightsHolder()}}
+\item \href{#method-DCEntry-delDCRightsHolder}{\code{DCEntry$delDCRightsHolder()}}
+\item \href{#method-DCEntry-setDCRightsHolders}{\code{DCEntry$setDCRightsHolders()}}
+\item \href{#method-DCEntry-getDCRightsHolders}{\code{DCEntry$getDCRightsHolders()}}
+\item \href{#method-DCEntry-addDCSource}{\code{DCEntry$addDCSource()}}
+\item \href{#method-DCEntry-delDCSource}{\code{DCEntry$delDCSource()}}
+\item \href{#method-DCEntry-setDCSources}{\code{DCEntry$setDCSources()}}
+\item \href{#method-DCEntry-getDCSources}{\code{DCEntry$getDCSources()}}
+\item \href{#method-DCEntry-addDCSubject}{\code{DCEntry$addDCSubject()}}
+\item \href{#method-DCEntry-delDCSubject}{\code{DCEntry$delDCSubject()}}
+\item \href{#method-DCEntry-setDCSubjects}{\code{DCEntry$setDCSubjects()}}
+\item \href{#method-DCEntry-getDCSubjects}{\code{DCEntry$getDCSubjects()}}
+\item \href{#method-DCEntry-addDCTableOfContents}{\code{DCEntry$addDCTableOfContents()}}
+\item \href{#method-DCEntry-delDCTableOfContents}{\code{DCEntry$delDCTableOfContents()}}
+\item \href{#method-DCEntry-setDCTablesOfContents}{\code{DCEntry$setDCTablesOfContents()}}
+\item \href{#method-DCEntry-getDCTablesOfContent}{\code{DCEntry$getDCTablesOfContent()}}
+\item \href{#method-DCEntry-addDCTemporal}{\code{DCEntry$addDCTemporal()}}
+\item \href{#method-DCEntry-delDCTemporal}{\code{DCEntry$delDCTemporal()}}
+\item \href{#method-DCEntry-setDCTemporals}{\code{DCEntry$setDCTemporals()}}
+\item \href{#method-DCEntry-getDCTemporals}{\code{DCEntry$getDCTemporals()}}
+\item \href{#method-DCEntry-addDCTitle}{\code{DCEntry$addDCTitle()}}
+\item \href{#method-DCEntry-delDCTitle}{\code{DCEntry$delDCTitle()}}
+\item \href{#method-DCEntry-setDCTitles}{\code{DCEntry$setDCTitles()}}
+\item \href{#method-DCEntry-getDCTitles}{\code{DCEntry$getDCTitles()}}
+\item \href{#method-DCEntry-addDCType}{\code{DCEntry$addDCType()}}
+\item \href{#method-DCEntry-delDCType}{\code{DCEntry$delDCType()}}
+\item \href{#method-DCEntry-setDCTypes}{\code{DCEntry$setDCTypes()}}
+\item \href{#method-DCEntry-getDCTypes}{\code{DCEntry$getDCTypes()}}
+\item \href{#method-DCEntry-clone}{\code{DCEntry$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-addListElement}{\code{atom4R::AtomAbstractObject$addListElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains">}\href{../../atom4R/html/AtomAbstractObject.html#method-contains}{\code{atom4R::AtomAbstractObject$contains()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-createElement}{\code{atom4R::AtomAbstractObject$createElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode">}\href{../../atom4R/html/AtomAbstractObject.html#method-decode}{\code{atom4R::AtomAbstractObject$decode()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-delListElement}{\code{atom4R::AtomAbstractObject$delListElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode">}\href{../../atom4R/html/AtomAbstractObject.html#method-encode}{\code{atom4R::AtomAbstractObject$encode()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClass}{\code{atom4R::AtomAbstractObject$getClass()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClassName}{\code{atom4R::AtomAbstractObject$getClassName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespace}{\code{atom4R::AtomAbstractObject$getNamespace()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespaceDefinition}{\code{atom4R::AtomAbstractObject$getNamespaceDefinition()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getRootElement}{\code{atom4R::AtomAbstractObject$getRootElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getXmlElement}{\code{atom4R::AtomAbstractObject$getXmlElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-isDocument}{\code{atom4R::AtomAbstractObject$isDocument()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom">}\href{../../atom4R/html/AtomAbstractObject.html#method-isFieldInheritedFrom}{\code{atom4R::AtomAbstractObject$isFieldInheritedFrom()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print">}\href{../../atom4R/html/AtomAbstractObject.html#method-print}{\code{atom4R::AtomAbstractObject$print()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save">}\href{../../atom4R/html/AtomAbstractObject.html#method-save}{\code{atom4R::AtomAbstractObject$save()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-setIsDocument}{\code{atom4R::AtomAbstractObject$setIsDocument()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate">}\href{../../atom4R/html/AtomAbstractObject.html#method-validate}{\code{atom4R::AtomAbstractObject$validate()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addAuthor">}\href{../../atom4R/html/AtomEntry.html#method-addAuthor}{\code{atom4R::AtomEntry$addAuthor()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addCategory">}\href{../../atom4R/html/AtomEntry.html#method-addCategory}{\code{atom4R::AtomEntry$addCategory()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addContributor">}\href{../../atom4R/html/AtomEntry.html#method-addContributor}{\code{atom4R::AtomEntry$addContributor()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addLink">}\href{../../atom4R/html/AtomEntry.html#method-addLink}{\code{atom4R::AtomEntry$addLink()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delAuthor">}\href{../../atom4R/html/AtomEntry.html#method-delAuthor}{\code{atom4R::AtomEntry$delAuthor()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delCategory">}\href{../../atom4R/html/AtomEntry.html#method-delCategory}{\code{atom4R::AtomEntry$delCategory()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delContributor">}\href{../../atom4R/html/AtomEntry.html#method-delContributor}{\code{atom4R::AtomEntry$delContributor()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delLink">}\href{../../atom4R/html/AtomEntry.html#method-delLink}{\code{atom4R::AtomEntry$delLink()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setContent">}\href{../../atom4R/html/AtomEntry.html#method-setContent}{\code{atom4R::AtomEntry$setContent()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setId">}\href{../../atom4R/html/AtomEntry.html#method-setId}{\code{atom4R::AtomEntry$setId()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setPublished">}\href{../../atom4R/html/AtomEntry.html#method-setPublished}{\code{atom4R::AtomEntry$setPublished()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setRights">}\href{../../atom4R/html/AtomEntry.html#method-setRights}{\code{atom4R::AtomEntry$setRights()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setSource">}\href{../../atom4R/html/AtomEntry.html#method-setSource}{\code{atom4R::AtomEntry$setSource()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setSummary">}\href{../../atom4R/html/AtomEntry.html#method-setSummary}{\code{atom4R::AtomEntry$setSummary()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setTitle">}\href{../../atom4R/html/AtomEntry.html#method-setTitle}{\code{atom4R::AtomEntry$setTitle()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setUpdated">}\href{../../atom4R/html/AtomEntry.html#method-setUpdated}{\code{atom4R::AtomEntry$setUpdated()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-addListElement'><code>atom4R::AtomAbstractObject$addListElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-contains'><code>atom4R::AtomAbstractObject$contains()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-createElement'><code>atom4R::AtomAbstractObject$createElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-decode'><code>atom4R::AtomAbstractObject$decode()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-delListElement'><code>atom4R::AtomAbstractObject$delListElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-encode'><code>atom4R::AtomAbstractObject$encode()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getClass'><code>atom4R::AtomAbstractObject$getClass()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getClassName'><code>atom4R::AtomAbstractObject$getClassName()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getNamespace'><code>atom4R::AtomAbstractObject$getNamespace()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getNamespaceDefinition'><code>atom4R::AtomAbstractObject$getNamespaceDefinition()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getRootElement'><code>atom4R::AtomAbstractObject$getRootElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getXmlElement'><code>atom4R::AtomAbstractObject$getXmlElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-isDocument'><code>atom4R::AtomAbstractObject$isDocument()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-isFieldInheritedFrom'><code>atom4R::AtomAbstractObject$isFieldInheritedFrom()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-print'><code>atom4R::AtomAbstractObject$print()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-save'><code>atom4R::AtomAbstractObject$save()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-setIsDocument'><code>atom4R::AtomAbstractObject$setIsDocument()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-validate'><code>atom4R::AtomAbstractObject$validate()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addAuthor"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-addAuthor'><code>atom4R::AtomEntry$addAuthor()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addCategory"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-addCategory'><code>atom4R::AtomEntry$addCategory()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addContributor"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-addContributor'><code>atom4R::AtomEntry$addContributor()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="addLink"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-addLink'><code>atom4R::AtomEntry$addLink()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delAuthor"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-delAuthor'><code>atom4R::AtomEntry$delAuthor()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delCategory"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-delCategory'><code>atom4R::AtomEntry$delCategory()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delContributor"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-delContributor'><code>atom4R::AtomEntry$delContributor()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="delLink"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-delLink'><code>atom4R::AtomEntry$delLink()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setContent"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setContent'><code>atom4R::AtomEntry$setContent()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setId"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setId'><code>atom4R::AtomEntry$setId()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setPublished"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setPublished'><code>atom4R::AtomEntry$setPublished()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setRights"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setRights'><code>atom4R::AtomEntry$setRights()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setSource"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setSource'><code>atom4R::AtomEntry$setSource()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setSummary"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setSummary'><code>atom4R::AtomEntry$setSummary()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setTitle"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setTitle'><code>atom4R::AtomEntry$setTitle()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomEntry" data-id="setUpdated"><a href='../../atom4R/html/AtomEntry.html#method-AtomEntry-setUpdated'><code>atom4R::AtomEntry$setUpdated()</code></a></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-DCEntry-new"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-new}{}}}
 \subsection{Method \code{new()}}{
 Initializes an object of class \link{DCEntry}
 \subsection{Usage}{
@@ -224,12 +340,12 @@ Initializes an object of class \link{DCEntry}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCElement"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCElement}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCElement"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCElement}{}}}
 \subsection{Method \code{addDCElement()}}{
 Adds a Dublin Core element
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCElement(term, value)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCElement(term, value, extended = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -238,6 +354,8 @@ Adds a Dublin Core element
 \item{\code{term}}{term}
 
 \item{\code{value}}{value}
+
+\item{\code{extended}}{extended. Default is \code{FALSE}}
 }
 \if{html}{\out{</div>}}
 }
@@ -246,8 +364,8 @@ Adds a Dublin Core element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCElement"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCElement}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCElement"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCElement}{}}}
 \subsection{Method \code{delDCElement()}}{
 Deletes a Dublin Core element
 \subsection{Usage}{
@@ -268,8 +386,66 @@ Deletes a Dublin Core element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAbstract"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAbstract}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCElements"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCElements}{}}}
+\subsection{Method \code{setDCElements()}}{
+Set a list of DC elements
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCElements(term, values)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{term}}{term}
+
+\item{\code{values}}{vector of values}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCElements"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCElements}{}}}
+\subsection{Method \code{getDCElements()}}{
+Get a list of DC elements
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCElements(term)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{term}}{term}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a list of objects extending \link{DCElement}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCElementByValue"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCElementByValue}{}}}
+\subsection{Method \code{getDCElementByValue()}}{
+Get a DC element by value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCElementByValue(term, value)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{term}}{term}
+
+\item{\code{value}}{value}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAbstract"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAbstract}{}}}
 \subsection{Method \code{addDCAbstract()}}{
 Adds DC abstract
 \subsection{Usage}{
@@ -279,7 +455,7 @@ Adds DC abstract
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{abstract}}{object of class \link{DCAbstract}}
+\item{\code{abstract}}{object of class \link{DCAbstract} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -288,8 +464,8 @@ Adds DC abstract
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAbstract"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAbstract}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAbstract"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAbstract}{}}}
 \subsection{Method \code{delDCAbstract()}}{
 Deletes DC abstract
 \subsection{Usage}{
@@ -299,14 +475,44 @@ Deletes DC abstract
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{abstract}}{object of class \link{DCAbstract}}
+\item{\code{abstract}}{object of class \link{DCAbstract} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAccessRights"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAccessRights}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAbstracts"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAbstracts}{}}}
+\subsection{Method \code{setDCAbstracts()}}{
+Set DC abstracts
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAbstracts(abstracts)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{abstracts}}{abstracts, vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAbstracts"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAbstracts}{}}}
+\subsection{Method \code{getDCAbstracts()}}{
+Get DC abstracts
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAbstracts()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAbstract}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAccessRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAccessRights}{}}}
 \subsection{Method \code{addDCAccessRights()}}{
 Adds DC access rights
 \subsection{Usage}{
@@ -316,7 +522,7 @@ Adds DC access rights
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accessRights}}{object of class \link{DCAccessRights}}
+\item{\code{accessRights}}{object of class \link{DCAccessRights} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -325,8 +531,8 @@ Adds DC access rights
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAccessRights"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAccessRights}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAccessRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAccessRights}{}}}
 \subsection{Method \code{delDCAccessRights()}}{
 Deletes DC access rights
 \subsection{Usage}{
@@ -336,14 +542,44 @@ Deletes DC access rights
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accessRights}}{object of class \link{DCAccessRights}}
+\item{\code{accessRights}}{object of class \link{DCAccessRights} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAccrualMethod"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAccrualMethod}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAccessRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAccessRights}{}}}
+\subsection{Method \code{setDCAccessRights()}}{
+Set access rights
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAccessRights(accessRights)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{accessRights}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAccessRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAccessRights}{}}}
+\subsection{Method \code{getDCAccessRights()}}{
+Get DC access rights
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAccessRights()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAccessRights}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAccrualMethod"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAccrualMethod}{}}}
 \subsection{Method \code{addDCAccrualMethod()}}{
 Adds DC accrual method
 \subsection{Usage}{
@@ -353,7 +589,7 @@ Adds DC accrual method
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accrualMethod}}{object of class \link{DCAccrualMethod}}
+\item{\code{accrualMethod}}{object of class \link{DCAccrualMethod} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -362,8 +598,8 @@ Adds DC accrual method
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAccrualMethod"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAccrualMethod}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAccrualMethod"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAccrualMethod}{}}}
 \subsection{Method \code{delDCAccrualMethod()}}{
 Deletes DC accrual method
 \subsection{Usage}{
@@ -373,7 +609,7 @@ Deletes DC accrual method
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accrualMethod}}{object of class \link{DCAccrualMethod}}
+\item{\code{accrualMethod}}{object of class \link{DCAccrualMethod} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -382,8 +618,38 @@ Deletes DC accrual method
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAccrualPeriodicity"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAccrualPeriodicity}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAccrualMethods"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAccrualMethods}{}}}
+\subsection{Method \code{setDCAccrualMethods()}}{
+Set DC accrual method
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAccrualMethods(accrualMethods)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{accrualMethods}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAccrualMethods"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAccrualMethods}{}}}
+\subsection{Method \code{getDCAccrualMethods()}}{
+Get DC accrual method
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAccrualMethods()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAccrualMethod}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAccrualPeriodicity"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAccrualPeriodicity}{}}}
 \subsection{Method \code{addDCAccrualPeriodicity()}}{
 Adds DC accrual periodicity
 \subsection{Usage}{
@@ -393,7 +659,7 @@ Adds DC accrual periodicity
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accrualPeriodicity}}{object of class \link{DCAccrualPeriodicity}}
+\item{\code{accrualPeriodicity}}{object of class \link{DCAccrualPeriodicity} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -402,8 +668,8 @@ Adds DC accrual periodicity
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAccrualPeriodicity"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAccrualPeriodicity}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAccrualPeriodicity"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAccrualPeriodicity}{}}}
 \subsection{Method \code{delDCAccrualPeriodicity()}}{
 Deletes DC accrual periodicity
 \subsection{Usage}{
@@ -413,7 +679,7 @@ Deletes DC accrual periodicity
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accrualPeriodicity}}{object of class \link{DCAccrualPeriodicity}}
+\item{\code{accrualPeriodicity}}{object of class \link{DCAccrualPeriodicity} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -422,8 +688,38 @@ Deletes DC accrual periodicity
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAccrualPolicy"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAccrualPolicy}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAccrualPeriodicities"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAccrualPeriodicities}{}}}
+\subsection{Method \code{setDCAccrualPeriodicities()}}{
+Set DC accrual periodicities
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAccrualPeriodicities(accrualPeriodicities)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{accrualPeriodicities}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAccrualPeriodicities"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAccrualPeriodicities}{}}}
+\subsection{Method \code{getDCAccrualPeriodicities()}}{
+Get DC accrual periodicities
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAccrualPeriodicities()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAccrualPeriodicity}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAccrualPolicy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAccrualPolicy}{}}}
 \subsection{Method \code{addDCAccrualPolicy()}}{
 Adds DC accrual policy
 \subsection{Usage}{
@@ -433,7 +729,7 @@ Adds DC accrual policy
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accrualPolicy}}{object of class \link{DCAccrualPolicy}}
+\item{\code{accrualPolicy}}{object of class \link{DCAccrualPolicy} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -442,8 +738,8 @@ Adds DC accrual policy
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAccrualPolicy"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAccrualPolicy}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAccrualPolicy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAccrualPolicy}{}}}
 \subsection{Method \code{delDCAccrualPolicy()}}{
 Deletes DC accrual policy
 \subsection{Usage}{
@@ -453,7 +749,7 @@ Deletes DC accrual policy
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{accrualPolicy}}{object of class \link{DCAccrualPolicy}}
+\item{\code{accrualPolicy}}{object of class \link{DCAccrualPolicy} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -462,8 +758,38 @@ Deletes DC accrual policy
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAlternative"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAlternative}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAccrualPolicies"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAccrualPolicies}{}}}
+\subsection{Method \code{setDCAccrualPolicies()}}{
+Set DC accrual policies
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAccrualPolicies(accrualPolicies)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{accrualPolicies}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAccrualPolicies"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAccrualPolicies}{}}}
+\subsection{Method \code{getDCAccrualPolicies()}}{
+Get DC accrual policies
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAccrualPolicies()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAccrualPolicy}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAlternative"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAlternative}{}}}
 \subsection{Method \code{addDCAlternative()}}{
 Adds DC alternative
 \subsection{Usage}{
@@ -473,7 +799,7 @@ Adds DC alternative
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{alternative}}{object of class \link{DCAlternative}}
+\item{\code{alternative}}{object of class \link{DCAlternative} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -482,8 +808,8 @@ Adds DC alternative
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAlternative"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAlternative}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAlternative"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAlternative}{}}}
 \subsection{Method \code{delDCAlternative()}}{
 Deletes DC alternative
 \subsection{Usage}{
@@ -493,7 +819,7 @@ Deletes DC alternative
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{alternative}}{object of class \link{DCAlternative}}
+\item{\code{alternative}}{object of class \link{DCAlternative} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -502,8 +828,38 @@ Deletes DC alternative
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAudience"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAudience}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAlternatives"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAlternatives}{}}}
+\subsection{Method \code{setDCAlternatives()}}{
+Set DC alternatives
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAlternatives(alternatives)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{alternatives}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAlternatives"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAlternatives}{}}}
+\subsection{Method \code{getDCAlternatives()}}{
+Get DC alternatives
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAlternatives()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAlternative}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAudience"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAudience}{}}}
 \subsection{Method \code{addDCAudience()}}{
 Adds DC audience
 \subsection{Usage}{
@@ -513,7 +869,7 @@ Adds DC audience
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{audience}}{object of class \link{DCAudience}}
+\item{\code{audience}}{object of class \link{DCAudience} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -522,8 +878,8 @@ Adds DC audience
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAudience"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAudience}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAudience"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAudience}{}}}
 \subsection{Method \code{delDCAudience()}}{
 Deletes DC audience
 \subsection{Usage}{
@@ -533,7 +889,7 @@ Deletes DC audience
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{audience}}{object of class \link{DCAudience}}
+\item{\code{audience}}{object of class \link{DCAudience} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -542,8 +898,38 @@ Deletes DC audience
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCAvailable"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCAvailable}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAudiences"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAudiences}{}}}
+\subsection{Method \code{setDCAudiences()}}{
+Set DC audiences
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAudiences(audiences)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{audiences}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAudiences"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAudiences}{}}}
+\subsection{Method \code{getDCAudiences()}}{
+Get DC audiences
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAudiences()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAudience}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCAvailable"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCAvailable}{}}}
 \subsection{Method \code{addDCAvailable()}}{
 Adds DC available
 \subsection{Usage}{
@@ -553,7 +939,7 @@ Adds DC available
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{available}}{object of class \link{DCAvailable}}
+\item{\code{available}}{object of class \link{DCAvailable} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -562,8 +948,8 @@ Adds DC available
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCAvailable"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCAvailable}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCAvailable"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCAvailable}{}}}
 \subsection{Method \code{delDCAvailable()}}{
 Deletes DC available
 \subsection{Usage}{
@@ -573,7 +959,7 @@ Deletes DC available
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{available}}{object of class \link{DCAvailable}}
+\item{\code{available}}{object of class \link{DCAvailable} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -582,8 +968,38 @@ Deletes DC available
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCBibliographicCitation"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCBibliographicCitation}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCAvailables"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCAvailables}{}}}
+\subsection{Method \code{setDCAvailables()}}{
+Set DC availables
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCAvailables(availables)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{availables}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCAvailables"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCAvailables}{}}}
+\subsection{Method \code{getDCAvailables()}}{
+Get DC availables
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAvailables()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCAvailable}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCBibliographicCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCBibliographicCitation}{}}}
 \subsection{Method \code{addDCBibliographicCitation()}}{
 Adds DC bibliographic citation
 \subsection{Usage}{
@@ -593,7 +1009,7 @@ Adds DC bibliographic citation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{bibliographicCitation}}{object of class \link{DCBibliographicCitation}}
+\item{\code{bibliographicCitation}}{object of class \link{DCBibliographicCitation} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -602,8 +1018,8 @@ Adds DC bibliographic citation
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCBibliographicCitation"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCBibliographicCitation}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCBibliographicCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCBibliographicCitation}{}}}
 \subsection{Method \code{delDCBibliographicCitation()}}{
 Deletes DC bibliographic citation
 \subsection{Usage}{
@@ -613,7 +1029,7 @@ Deletes DC bibliographic citation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{bibliographicCitation}}{object of class \link{DCBibliographicCitation}}
+\item{\code{bibliographicCitation}}{object of class \link{DCBibliographicCitation} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -622,8 +1038,38 @@ Deletes DC bibliographic citation
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCConformsTo"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCConformsTo}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCBibliographicCitations"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCBibliographicCitations}{}}}
+\subsection{Method \code{setDCBibliographicCitations()}}{
+Set bibliographic citations
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCBibliographicCitations(bibliographicCitations)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{bibliographicCitations}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCBibliographicCitations"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCBibliographicCitations}{}}}
+\subsection{Method \code{getDCBibliographicCitations()}}{
+Get bibliographic citations
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCBibliographicCitations()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+the list of objects of class \link{DCBibliographicCitation}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCConformsTo"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCConformsTo}{}}}
 \subsection{Method \code{addDCConformsTo()}}{
 Adds DC conforms to
 \subsection{Usage}{
@@ -633,7 +1079,7 @@ Adds DC conforms to
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{conformsTo}}{object of class \link{DCConformsTo}}
+\item{\code{conformsTo}}{object of class \link{DCConformsTo} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -642,8 +1088,8 @@ Adds DC conforms to
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCConformsTo"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCConformsTo}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCConformsTo"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCConformsTo}{}}}
 \subsection{Method \code{delDCConformsTo()}}{
 Deletes DC conforms to
 \subsection{Usage}{
@@ -653,7 +1099,7 @@ Deletes DC conforms to
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{conformsTo}}{object of class \link{DCConformsTo}}
+\item{\code{conformsTo}}{object of class \link{DCConformsTo} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -662,8 +1108,38 @@ Deletes DC conforms to
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCContributor"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCContributor}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCConformsTo"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCConformsTo}{}}}
+\subsection{Method \code{setDCConformsTo()}}{
+Set DC conforms to
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCConformsTo(conformsTo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conformsTo}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCConformsTo"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCConformsTo}{}}}
+\subsection{Method \code{getDCConformsTo()}}{
+Get DC conforms to
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCConformsTo()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+the list of objects of class \link{DCConformsTo}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCContributor"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCContributor}{}}}
 \subsection{Method \code{addDCContributor()}}{
 Adds DC contributor
 \subsection{Usage}{
@@ -673,7 +1149,7 @@ Adds DC contributor
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{contributor}}{object of class \link{DCContributor}}
+\item{\code{contributor}}{object of class \link{DCContributor} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -682,8 +1158,8 @@ Adds DC contributor
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCContributor"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCContributor}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCContributor"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCContributor}{}}}
 \subsection{Method \code{delDCContributor()}}{
 Deletes DC contributor
 \subsection{Usage}{
@@ -693,7 +1169,7 @@ Deletes DC contributor
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{contributor}}{object of class \link{DCContributor}}
+\item{\code{contributor}}{object of class \link{DCContributor} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -702,8 +1178,38 @@ Deletes DC contributor
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCCoverage"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCCoverage}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCContributors"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCContributors}{}}}
+\subsection{Method \code{setDCContributors()}}{
+Set DC contributors
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCContributors(contributors)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contributors}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCContributors"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCContributors}{}}}
+\subsection{Method \code{getDCContributors()}}{
+Get DC contributors
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCContributors()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+list of objects of class \link{DCContributor}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCCoverage"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCCoverage}{}}}
 \subsection{Method \code{addDCCoverage()}}{
 Adds DC coverage
 \subsection{Usage}{
@@ -713,7 +1219,7 @@ Adds DC coverage
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{coverage}}{object of class \link{DCCoverage}}
+\item{\code{coverage}}{object of class \link{DCCoverage} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -722,8 +1228,8 @@ Adds DC coverage
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCCoverage"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCCoverage}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCCoverage"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCCoverage}{}}}
 \subsection{Method \code{delDCCoverage()}}{
 Deletes DC coverage
 \subsection{Usage}{
@@ -733,7 +1239,7 @@ Deletes DC coverage
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{coverage}}{object of class \link{DCCoverage}}
+\item{\code{coverage}}{object of class \link{DCCoverage} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -742,8 +1248,38 @@ Deletes DC coverage
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCCreated"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCCreated}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCCoverages"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCCoverages}{}}}
+\subsection{Method \code{setDCCoverages()}}{
+Set DC coverages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCCoverages(coverages)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{coverages}}{coverages vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCCoverages"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCCoverages}{}}}
+\subsection{Method \code{getDCCoverages()}}{
+Get DC coverages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCCoverages()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCCoverage}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCCreated"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCCreated}{}}}
 \subsection{Method \code{addDCCreated()}}{
 Adds DC created
 \subsection{Usage}{
@@ -753,7 +1289,7 @@ Adds DC created
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{created}}{object of class \link{DCCreated}}
+\item{\code{created}}{object of class \link{DCCreated} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -762,8 +1298,8 @@ Adds DC created
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCCreated"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCCreated}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCCreated"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCCreated}{}}}
 \subsection{Method \code{delDCCreated()}}{
 Deletes DC created
 \subsection{Usage}{
@@ -773,7 +1309,7 @@ Deletes DC created
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{created}}{object of class \link{DCCreated}}
+\item{\code{created}}{object of class \link{DCCreated} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -782,8 +1318,8 @@ Deletes DC created
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCCreator"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCCreator}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCCreator"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCCreator}{}}}
 \subsection{Method \code{addDCCreator()}}{
 Adds DC creator
 \subsection{Usage}{
@@ -793,7 +1329,7 @@ Adds DC creator
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{creator}}{object of class \link{DCCreator}}
+\item{\code{creator}}{object of class \link{DCCreator} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -802,8 +1338,8 @@ Adds DC creator
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCCreator"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCCreator}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCCreator"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCCreator}{}}}
 \subsection{Method \code{delDCCreator()}}{
 Deletes DC creator
 \subsection{Usage}{
@@ -813,7 +1349,7 @@ Deletes DC creator
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{creator}}{object of class \link{DCCreator}}
+\item{\code{creator}}{object of class \link{DCCreator} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -822,8 +1358,38 @@ Deletes DC creator
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCDate"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCDate}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCCreators"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCCreators}{}}}
+\subsection{Method \code{setDCCreators()}}{
+Set DC creators
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCCreators(creators)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{creators}}{creators}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCCreators"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCCreators}{}}}
+\subsection{Method \code{getDCCreators()}}{
+Get DC creators
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCCreators()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCCreator}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCDate"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCDate}{}}}
 \subsection{Method \code{addDCDate()}}{
 Adds DC date
 \subsection{Usage}{
@@ -833,7 +1399,7 @@ Adds DC date
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{date}}{object of class \link{DCDate}}
+\item{\code{date}}{object of class \link{DCDate} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -842,8 +1408,8 @@ Adds DC date
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCDate"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCDate}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCDate"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCDate}{}}}
 \subsection{Method \code{delDCDate()}}{
 Deletes DC date
 \subsection{Usage}{
@@ -853,7 +1419,7 @@ Deletes DC date
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{date}}{object of class \link{DCDate}}
+\item{\code{date}}{object of class \link{DCDate} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -862,8 +1428,38 @@ Deletes DC date
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCDateAccepted"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCDateAccepted}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCDates"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCDates}{}}}
+\subsection{Method \code{setDCDates()}}{
+Set DC Creators
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCDates(dates)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dates}}{dates vector of class \link{Date} or \link{POSIXt}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCDates"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCDates}{}}}
+\subsection{Method \code{getDCDates()}}{
+Get DC Dates
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCDates()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCDate}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCDateAccepted"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCDateAccepted}{}}}
 \subsection{Method \code{addDCDateAccepted()}}{
 Adds DC date accepted
 \subsection{Usage}{
@@ -873,7 +1469,7 @@ Adds DC date accepted
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateAccepted}}{object of class \link{DCDateAccepted}}
+\item{\code{dateAccepted}}{object of class \link{DCDateAccepted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -882,8 +1478,8 @@ Adds DC date accepted
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCDateAccepted"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCDateAccepted}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCDateAccepted"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCDateAccepted}{}}}
 \subsection{Method \code{delDCDateAccepted()}}{
 Deletes DC date accepted
 \subsection{Usage}{
@@ -893,7 +1489,7 @@ Deletes DC date accepted
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateAccepted}}{object of class \link{DCDateAccepted}}
+\item{\code{dateAccepted}}{object of class \link{DCDateAccepted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -902,8 +1498,8 @@ Deletes DC date accepted
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCDateCopyrighted"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCDateCopyrighted}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCDateCopyrighted"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCDateCopyrighted}{}}}
 \subsection{Method \code{addDCDateCopyrighted()}}{
 Adds DC date copyrighted
 \subsection{Usage}{
@@ -913,7 +1509,7 @@ Adds DC date copyrighted
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateCopyrighted}}{object of class \link{DCDateCopyrighted}}
+\item{\code{dateCopyrighted}}{object of class \link{DCDateCopyrighted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -922,8 +1518,8 @@ Adds DC date copyrighted
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCDateCopyrighted"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCDateCopyrighted}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCDateCopyrighted"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCDateCopyrighted}{}}}
 \subsection{Method \code{delDCDateCopyrighted()}}{
 Deletes DC date copyrighted
 \subsection{Usage}{
@@ -933,7 +1529,7 @@ Deletes DC date copyrighted
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateCopyrighted}}{object of class \link{DCDateCopyrighted}}
+\item{\code{dateCopyrighted}}{object of class \link{DCDateCopyrighted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -942,8 +1538,8 @@ Deletes DC date copyrighted
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCDateSubmitted"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCDateSubmitted}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCDateSubmitted"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCDateSubmitted}{}}}
 \subsection{Method \code{addDCDateSubmitted()}}{
 Adds DC date submitted
 \subsection{Usage}{
@@ -953,7 +1549,7 @@ Adds DC date submitted
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateSubmitted}}{object of class \link{DCDateSubmitted}}
+\item{\code{dateSubmitted}}{object of class \link{DCDateSubmitted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -962,8 +1558,8 @@ Adds DC date submitted
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCDateSubmitted"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCDateSubmitted}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCDateSubmitted"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCDateSubmitted}{}}}
 \subsection{Method \code{delDCDateSubmitted()}}{
 Deletes DC date submitted
 \subsection{Usage}{
@@ -973,7 +1569,7 @@ Deletes DC date submitted
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateSubmitted}}{object of class \link{DCDateSubmitted}}
+\item{\code{dateSubmitted}}{object of class \link{DCDateSubmitted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -982,8 +1578,8 @@ Deletes DC date submitted
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCDescription"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCDescription}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCDescription}{}}}
 \subsection{Method \code{addDCDescription()}}{
 Adds DC description
 \subsection{Usage}{
@@ -993,7 +1589,7 @@ Adds DC description
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{description}}{object of class \link{DCDescription}}
+\item{\code{description}}{object of class \link{DCDescription} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1002,8 +1598,8 @@ Adds DC description
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCDescription"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCDescription}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCDescription}{}}}
 \subsection{Method \code{delDCDescription()}}{
 Deletes DC description
 \subsection{Usage}{
@@ -1013,7 +1609,7 @@ Deletes DC description
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{description}}{object of class \link{DCDescription}}
+\item{\code{description}}{object of class \link{DCDescription} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1022,8 +1618,38 @@ Deletes DC description
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCEducationalLevel"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCEducationalLevel}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCDescriptions"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCDescriptions}{}}}
+\subsection{Method \code{setDCDescriptions()}}{
+Set DC descriptions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCDescriptions(descriptions)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{descriptions}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCDescriptions"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCDescriptions}{}}}
+\subsection{Method \code{getDCDescriptions()}}{
+Get DC descriptions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCDescriptions()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCDescription}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCEducationalLevel"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCEducationalLevel}{}}}
 \subsection{Method \code{addDCEducationalLevel()}}{
 Adds DC educational level
 \subsection{Usage}{
@@ -1033,7 +1659,7 @@ Adds DC educational level
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{educationalLevel}}{object of class \link{DCEducationalLevel}}
+\item{\code{educationalLevel}}{object of class \link{DCEducationalLevel} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1042,8 +1668,8 @@ Adds DC educational level
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCEducationalLevel"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCEducationalLevel}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCEducationalLevel"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCEducationalLevel}{}}}
 \subsection{Method \code{delDCEducationalLevel()}}{
 Deletes DC educational level
 \subsection{Usage}{
@@ -1053,7 +1679,7 @@ Deletes DC educational level
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{educationalLevel}}{object of class \link{DCEducationalLevel}}
+\item{\code{educationalLevel}}{object of class \link{DCEducationalLevel} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1062,8 +1688,38 @@ Deletes DC educational level
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCExtent"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCExtent}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCEducationalLevels"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCEducationalLevels}{}}}
+\subsection{Method \code{setDCEducationalLevels()}}{
+set DC education levels
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCEducationalLevels(educationLevels)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{educationLevels}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCEducationalLevels"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCEducationalLevels}{}}}
+\subsection{Method \code{getDCEducationalLevels()}}{
+Get DC educational levels
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCEducationalLevels()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCEducationalLevel}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCExtent"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCExtent}{}}}
 \subsection{Method \code{addDCExtent()}}{
 Adds DC extent
 \subsection{Usage}{
@@ -1073,7 +1729,7 @@ Adds DC extent
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{extent}}{object of class \link{DCExtent}}
+\item{\code{extent}}{object of class \link{DCExtent} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1082,8 +1738,8 @@ Adds DC extent
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCExtent"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCExtent}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCExtent"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCExtent}{}}}
 \subsection{Method \code{delDCExtent()}}{
 Deletes DC extent
 \subsection{Usage}{
@@ -1093,7 +1749,7 @@ Deletes DC extent
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{extent}}{object of class \link{DCExtent}}
+\item{\code{extent}}{object of class \link{DCExtent} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1102,8 +1758,38 @@ Deletes DC extent
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCFormat"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCFormat}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCExtents"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCExtents}{}}}
+\subsection{Method \code{setDCExtents()}}{
+Set DC extents
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCExtents(extents)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{extents}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCExtents"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCExtents}{}}}
+\subsection{Method \code{getDCExtents()}}{
+Get DC extents
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCExtents()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCExtent}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCFormat}{}}}
 \subsection{Method \code{addDCFormat()}}{
 Adds DC format
 \subsection{Usage}{
@@ -1113,7 +1799,7 @@ Adds DC format
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{format}}{object of class \link{DCFormat}}
+\item{\code{format}}{object of class \link{DCFormat} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1122,8 +1808,8 @@ Adds DC format
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCFormat"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCFormat}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCFormat}{}}}
 \subsection{Method \code{delDCFormat()}}{
 Deletes DC format
 \subsection{Usage}{
@@ -1133,7 +1819,7 @@ Deletes DC format
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{format}}{object of class \link{DCFormat}}
+\item{\code{format}}{object of class \link{DCFormat} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1142,8 +1828,178 @@ Deletes DC format
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCIdentifier"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCIdentifier}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCFormats"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCFormats}{}}}
+\subsection{Method \code{setDCFormats()}}{
+Set DC formats
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCFormats(formats)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{formats}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCFormats"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCFormats}{}}}
+\subsection{Method \code{getDCFormats()}}{
+Get DC formats
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCFormats()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCFormat}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCHasPart"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCHasPart}{}}}
+\subsection{Method \code{addDCHasPart()}}{
+Adds DC hasPart
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCHasPart(hasPart)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hasPart}}{object of class \link{DCHasPart} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCHasPart"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCHasPart}{}}}
+\subsection{Method \code{delDCHasPart()}}{
+Deletes DC hasPart
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCHasPart(hasPart)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hasPart}}{object of class \link{DCHasPart} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCHasParts"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCHasParts}{}}}
+\subsection{Method \code{setDCHasParts()}}{
+Set DC hasParts
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCHasParts(hasParts)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hasParts}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCHasParts"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCHasParts}{}}}
+\subsection{Method \code{getDCHasParts()}}{
+Get DC has part
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCHasParts()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCHasPart}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCHasVersion"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCHasVersion}{}}}
+\subsection{Method \code{addDCHasVersion()}}{
+Adds DC hasVersion
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCHasVersion(hasVersion)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hasVersion}}{object of class \link{DCHasVersion} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCHasVersion"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCHasVersion}{}}}
+\subsection{Method \code{delDCHasVersion()}}{
+Deletes DC hasVersion
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCHasVersion(hasVersion)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hasVersion}}{object of class \link{DCHasVersion} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCHasVersions"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCHasVersions}{}}}
+\subsection{Method \code{setDCHasVersions()}}{
+Set DC hasVersions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCHasVersions(hasVersions)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hasVersions}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCHasVersions"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCHasVersions}{}}}
+\subsection{Method \code{getDCHasVersions()}}{
+Get DC has versions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCHasVersions()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCHasVersion}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIdentifier}{}}}
 \subsection{Method \code{addDCIdentifier()}}{
 Adds DC identifier
 \subsection{Usage}{
@@ -1153,7 +2009,7 @@ Adds DC identifier
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{object of class \link{DCIdentifier}}
+\item{\code{identifier}}{object of class \link{DCIdentifier} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1162,8 +2018,8 @@ Adds DC identifier
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCIdentifier"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCIdentifier}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIdentifier}{}}}
 \subsection{Method \code{delDCIdentifier()}}{
 Deletes DC identifier
 \subsection{Usage}{
@@ -1173,7 +2029,7 @@ Deletes DC identifier
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{object of class \link{DCIdentifier}}
+\item{\code{identifier}}{object of class \link{DCIdentifier} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1182,8 +2038,38 @@ Deletes DC identifier
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCInstructionalMethod"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCInstructionalMethod}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCIdentifiers"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCIdentifiers}{}}}
+\subsection{Method \code{setDCIdentifiers()}}{
+Set DC identifiers
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCIdentifiers(identifiers)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifiers}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCIdentifiers"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCIdentifiers}{}}}
+\subsection{Method \code{getDCIdentifiers()}}{
+Get DC identifiers
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCIdentifiers()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCIdentifier}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCInstructionalMethod"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCInstructionalMethod}{}}}
 \subsection{Method \code{addDCInstructionalMethod()}}{
 Adds DC instructionalMethod
 \subsection{Usage}{
@@ -1193,7 +2079,7 @@ Adds DC instructionalMethod
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{instructionalMethod}}{object of class \link{DCInstructionalMethod}}
+\item{\code{instructionalMethod}}{object of class \link{DCInstructionalMethod} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1202,8 +2088,8 @@ Adds DC instructionalMethod
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCInstructionalMethod"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCInstructionalMethod}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCInstructionalMethod"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCInstructionalMethod}{}}}
 \subsection{Method \code{delDCInstructionalMethod()}}{
 Deletes DC instructionalMethod
 \subsection{Usage}{
@@ -1213,7 +2099,7 @@ Deletes DC instructionalMethod
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{instructionalMethod}}{object of class \link{DCInstructionalMethod}}
+\item{\code{instructionalMethod}}{object of class \link{DCInstructionalMethod} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1222,8 +2108,388 @@ Deletes DC instructionalMethod
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCIssued"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCIssued}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCInstructionalMethods"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCInstructionalMethods}{}}}
+\subsection{Method \code{setDCInstructionalMethods()}}{
+Set DC Instructional methods
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCInstructionalMethods(instructionalMethods)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instructionalMethods}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCInstructionalMethods"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCInstructionalMethods}{}}}
+\subsection{Method \code{getDCInstructionalMethods()}}{
+Get DC instructional methods
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCInstructionalMethods()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCInstructionalMethod}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIsPartOf"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIsPartOf}{}}}
+\subsection{Method \code{addDCIsPartOf()}}{
+Adds DC isPartOf
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCIsPartOf(isPartOf)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isPartOf}}{object of class \link{DCIsPartOf} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCIsPartOf"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIsPartOf}{}}}
+\subsection{Method \code{delDCIsPartOf()}}{
+Deletes DC isPartOf
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCIsPartOf(isPartOf)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isPartOf}}{object of class \link{DCIsPartOf} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCIsPartOf"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCIsPartOf}{}}}
+\subsection{Method \code{setDCIsPartOf()}}{
+Set DC IsPartOf
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCIsPartOf(isPartOf)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isPartOf}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCIsPartOfs"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCIsPartOfs}{}}}
+\subsection{Method \code{getDCIsPartOfs()}}{
+Get DC Is Part of
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCIsPartOfs()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCIsPartOf}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIsReferencedBy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIsReferencedBy}{}}}
+\subsection{Method \code{addDCIsReferencedBy()}}{
+Adds DC isReferencedBy
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCIsReferencedBy(isReferencedBy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isReferencedBy}}{object of class \link{DCIsReferencedBy} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCIsReferencedBy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIsReferencedBy}{}}}
+\subsection{Method \code{delDCIsReferencedBy()}}{
+Deletes DC isReferencedBy
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCIsReferencedBy(isReferencedBy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isReferencedBy}}{object of class \link{DCIsReferencedBy} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCIsReferencedBys"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCIsReferencedBys}{}}}
+\subsection{Method \code{setDCIsReferencedBys()}}{
+Set DC isReferencedBys
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCIsReferencedBys(isReferencedBys)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isReferencedBys}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCIsReferencedBys"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCIsReferencedBys}{}}}
+\subsection{Method \code{getDCIsReferencedBys()}}{
+Get DC Is Referenced by
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCIsReferencedBys()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCIsReferencedBy}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIsReplacedBy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIsReplacedBy}{}}}
+\subsection{Method \code{addDCIsReplacedBy()}}{
+Adds DC isReplacedBy
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCIsReplacedBy(isReplacedBy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isReplacedBy}}{object of class \link{DCIsReplacedBy} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCIsReplacedBy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIsReplacedBy}{}}}
+\subsection{Method \code{delDCIsReplacedBy()}}{
+Deletes DC isReferencedBy
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCIsReplacedBy(isReplacedBy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isReplacedBy}}{object of class \link{DCIsReplacedBy} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCIsReplacedBys"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCIsReplacedBys}{}}}
+\subsection{Method \code{setDCIsReplacedBys()}}{
+Set DC isReplacedBys
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCIsReplacedBys(isReplacedBys)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isReplacedBys}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCIsReplacedBys"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCIsReplacedBys}{}}}
+\subsection{Method \code{getDCIsReplacedBys()}}{
+Get DC Is Replaced by
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCIsReplacedBys()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCIsReplacedBy}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIsRequiredBy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIsRequiredBy}{}}}
+\subsection{Method \code{addDCIsRequiredBy()}}{
+Adds DC isRequiredBy
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCIsRequiredBy(isRequiredBy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isRequiredBy}}{object of class \link{DCIsRequiredBy} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCIsRequiredBy"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIsRequiredBy}{}}}
+\subsection{Method \code{delDCIsRequiredBy()}}{
+Deletes DC isRequiredBy
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCIsRequiredBy(isRequiredBy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isRequiredBy}}{object of class \link{DCIsRequiredBy} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCIsRequiredBys"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCIsRequiredBys}{}}}
+\subsection{Method \code{setDCIsRequiredBys()}}{
+Set DC isRequiredBys
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCIsRequiredBys(isRequiredBys)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isRequiredBys}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCIsRequiredBys"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCIsRequiredBys}{}}}
+\subsection{Method \code{getDCIsRequiredBys()}}{
+Get DC Is Required by
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCIsRequiredBys()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCIsRequiredBy}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIsVersionOf"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIsVersionOf}{}}}
+\subsection{Method \code{addDCIsVersionOf()}}{
+Adds DC isVersionOf
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$addDCIsVersionOf(isVersionOf)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isVersionOf}}{object of class \link{DCIsVersionOf} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-delDCIsVersionOf"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIsVersionOf}{}}}
+\subsection{Method \code{delDCIsVersionOf()}}{
+Deletes DC isVersionOf
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$delDCIsVersionOf(isVersionOf)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isVersionOf}}{object of class \link{DCIsVersionOf} or vector of class \link{character} and length 1}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-setDCIsVersionOfs"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCIsVersionOfs}{}}}
+\subsection{Method \code{setDCIsVersionOfs()}}{
+Set DC isVersionOfs
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCIsVersionOfs(isVersionOfs)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isVersionOfs}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCIsVersionOfs"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCIsVersionOfs}{}}}
+\subsection{Method \code{getDCIsVersionOfs()}}{
+Get DC Is Version Ofs
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCIsVersionOfs()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCIsVersionOf}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCIssued"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCIssued}{}}}
 \subsection{Method \code{addDCIssued()}}{
 Adds DC issued
 \subsection{Usage}{
@@ -1233,7 +2499,7 @@ Adds DC issued
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{issued}}{object of class \link{DCIssued}}
+\item{\code{issued}}{object of class \link{DCIssued} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1242,8 +2508,8 @@ Adds DC issued
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCIssued"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCIssued}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCIssued"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCIssued}{}}}
 \subsection{Method \code{delDCIssued()}}{
 Deletes DC issued
 \subsection{Usage}{
@@ -1253,7 +2519,7 @@ Deletes DC issued
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{issued}}{object of class \link{DCIssued}}
+\item{\code{issued}}{object of class \link{DCIssued} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1262,8 +2528,8 @@ Deletes DC issued
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCLanguage"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCLanguage}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCLanguage}{}}}
 \subsection{Method \code{addDCLanguage()}}{
 Adds DC language
 \subsection{Usage}{
@@ -1273,7 +2539,7 @@ Adds DC language
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{language}}{object of class \link{DCLanguage}}
+\item{\code{language}}{object of class \link{DCLanguage} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1282,8 +2548,8 @@ Adds DC language
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCLanguage"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCLanguage}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCLanguage}{}}}
 \subsection{Method \code{delDCLanguage()}}{
 Deletes DC language
 \subsection{Usage}{
@@ -1293,7 +2559,7 @@ Deletes DC language
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{language}}{object of class \link{DCLanguage}}
+\item{\code{language}}{object of class \link{DCLanguage} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1302,8 +2568,38 @@ Deletes DC language
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCLicense"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCLicense}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCLanguages"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCLanguages}{}}}
+\subsection{Method \code{setDCLanguages()}}{
+Set DC languages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCLanguages(languages)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{languages}}{languages vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCLanguages"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCLanguages}{}}}
+\subsection{Method \code{getDCLanguages()}}{
+Get languages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCLanguages()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCLanguage}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCLicense"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCLicense}{}}}
 \subsection{Method \code{addDCLicense()}}{
 Adds DC license
 \subsection{Usage}{
@@ -1313,7 +2609,7 @@ Adds DC license
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{license}}{object of class \link{DCLicense}}
+\item{\code{license}}{object of class \link{DCLicense} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1322,8 +2618,8 @@ Adds DC license
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCLicense"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCLicense}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCLicense"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCLicense}{}}}
 \subsection{Method \code{delDCLicense()}}{
 Deletes DC license
 \subsection{Usage}{
@@ -1333,7 +2629,7 @@ Deletes DC license
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{license}}{object of class \link{DCLicense}}
+\item{\code{license}}{object of class \link{DCLicense} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1342,8 +2638,38 @@ Deletes DC license
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCMediator"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCMediator}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCLicenses"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCLicenses}{}}}
+\subsection{Method \code{setDCLicenses()}}{
+Set DC licences
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCLicenses(licenses)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{licenses}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCLicenses"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCLicenses}{}}}
+\subsection{Method \code{getDCLicenses()}}{
+Get DC licenses
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCLicenses()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCLicense}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCMediator"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCMediator}{}}}
 \subsection{Method \code{addDCMediator()}}{
 Adds DC mediator
 \subsection{Usage}{
@@ -1353,7 +2679,7 @@ Adds DC mediator
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{mediator}}{object of class \link{DCMediator}}
+\item{\code{mediator}}{object of class \link{DCMediator} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1362,8 +2688,8 @@ Adds DC mediator
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCMediator"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCMediator}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCMediator"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCMediator}{}}}
 \subsection{Method \code{delDCMediator()}}{
 Deletes DC mediator
 \subsection{Usage}{
@@ -1373,7 +2699,7 @@ Deletes DC mediator
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{mediator}}{object of class \link{DCMediator}}
+\item{\code{mediator}}{object of class \link{DCMediator} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1382,8 +2708,38 @@ Deletes DC mediator
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCMedium"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCMedium}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCMediators"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCMediators}{}}}
+\subsection{Method \code{setDCMediators()}}{
+Set DC mediators
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCMediators(mediators)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mediators}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCMediators"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCMediators}{}}}
+\subsection{Method \code{getDCMediators()}}{
+Get DC mediators
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCMediators()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCMediator}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCMedium"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCMedium}{}}}
 \subsection{Method \code{addDCMedium()}}{
 Adds DC medium
 \subsection{Usage}{
@@ -1393,7 +2749,7 @@ Adds DC medium
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{medium}}{object of class \link{DCMedium}}
+\item{\code{medium}}{object of class \link{DCMedium} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1402,8 +2758,8 @@ Adds DC medium
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCMedium"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCMedium}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCMedium"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCMedium}{}}}
 \subsection{Method \code{delDCMedium()}}{
 Deletes DC medium
 \subsection{Usage}{
@@ -1413,7 +2769,7 @@ Deletes DC medium
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{medium}}{object of class \link{DCMedium}}
+\item{\code{medium}}{object of class \link{DCMedium} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1422,8 +2778,38 @@ Deletes DC medium
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCModified"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCModified}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCMediums"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCMediums}{}}}
+\subsection{Method \code{setDCMediums()}}{
+Set DC mediums
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCMediums(mediums)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mediums}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCMediums"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCMediums}{}}}
+\subsection{Method \code{getDCMediums()}}{
+Get DC mediums
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCMediums()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCMedium}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCModified"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCModified}{}}}
 \subsection{Method \code{addDCModified()}}{
 Adds DC modified
 \subsection{Usage}{
@@ -1433,7 +2819,7 @@ Adds DC modified
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{modified}}{object of class \link{DCModified}}
+\item{\code{modified}}{object of class \link{DCModified} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1442,8 +2828,8 @@ Adds DC modified
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCModified"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCModified}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCModified"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCModified}{}}}
 \subsection{Method \code{delDCModified()}}{
 Deletes DC modified
 \subsection{Usage}{
@@ -1453,7 +2839,7 @@ Deletes DC modified
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{modified}}{object of class \link{DCModified}}
+\item{\code{modified}}{object of class \link{DCModified} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1462,8 +2848,8 @@ Deletes DC modified
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCProvenance"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCProvenance}{}}}
+\if{html}{\out{<a id="method-DCEntry-addDCProvenance"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCProvenance}{}}}
 \subsection{Method \code{addDCProvenance()}}{
 Adds DC provenance
 \subsection{Usage}{
@@ -1473,7 +2859,7 @@ Adds DC provenance
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{provenance}}{object of class \link{DCProvenance}}
+\item{\code{provenance}}{object of class \link{DCProvenance} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1482,8 +2868,8 @@ Adds DC provenance
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCProvenance"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCProvenance}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCProvenance"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCProvenance}{}}}
 \subsection{Method \code{delDCProvenance()}}{
 Deletes DC provenance
 \subsection{Usage}{
@@ -1493,7 +2879,7 @@ Deletes DC provenance
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{provenance}}{object of class \link{DCProvenance}}
+\item{\code{provenance}}{object of class \link{DCProvenance} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1502,8 +2888,38 @@ Deletes DC provenance
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCPublisher"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCPublisher}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCProvenances"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCProvenances}{}}}
+\subsection{Method \code{setDCProvenances()}}{
+Set DC provenances
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCProvenances(provenances)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{provenances}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCProvenances"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCProvenances}{}}}
+\subsection{Method \code{getDCProvenances()}}{
+Get DC provenances
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCProvenances()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCProvenance}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCPublisher"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCPublisher}{}}}
 \subsection{Method \code{addDCPublisher()}}{
 Adds DC publisher
 \subsection{Usage}{
@@ -1513,7 +2929,7 @@ Adds DC publisher
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{publisher}}{object of class \link{DCPublisher}}
+\item{\code{publisher}}{object of class \link{DCPublisher} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1522,8 +2938,8 @@ Adds DC publisher
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCPublisher"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCPublisher}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCPublisher"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCPublisher}{}}}
 \subsection{Method \code{delDCPublisher()}}{
 Deletes DC publisher
 \subsection{Usage}{
@@ -1533,7 +2949,7 @@ Deletes DC publisher
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{publisher}}{object of class \link{DCPublisher}}
+\item{\code{publisher}}{object of class \link{DCPublisher} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1542,8 +2958,38 @@ Deletes DC publisher
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCReferences"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCReferences}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCPublishers"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCPublishers}{}}}
+\subsection{Method \code{setDCPublishers()}}{
+Set DC publishers
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCPublishers(publishers)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{publishers}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCPublishers"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCPublishers}{}}}
+\subsection{Method \code{getDCPublishers()}}{
+Get DC publishers
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCPublishers()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCPublisher}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCReferences"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCReferences}{}}}
 \subsection{Method \code{addDCReferences()}}{
 Adds DC references
 \subsection{Usage}{
@@ -1553,7 +2999,7 @@ Adds DC references
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{references}}{object of class \link{DCReferences}}
+\item{\code{references}}{object of class \link{DCReferences} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1562,8 +3008,8 @@ Adds DC references
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCReferences"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCReferences}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCReferences"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCReferences}{}}}
 \subsection{Method \code{delDCReferences()}}{
 Deletes DC references
 \subsection{Usage}{
@@ -1573,7 +3019,7 @@ Deletes DC references
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{references}}{object of class \link{DCReferences}}
+\item{\code{references}}{object of class \link{DCReferences} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1582,8 +3028,38 @@ Deletes DC references
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCRelation"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCRelation}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCReferences"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCReferences}{}}}
+\subsection{Method \code{setDCReferences()}}{
+Set DC references
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCReferences(references)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{references}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCReferences"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCReferences}{}}}
+\subsection{Method \code{getDCReferences()}}{
+Get DC references
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCReferences()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCReferences}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCRelation"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCRelation}{}}}
 \subsection{Method \code{addDCRelation()}}{
 Adds DC relation
 \subsection{Usage}{
@@ -1593,7 +3069,7 @@ Adds DC relation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{relation}}{object of class \link{DCRelation}}
+\item{\code{relation}}{object of class \link{DCRelation} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1602,8 +3078,8 @@ Adds DC relation
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCRelation"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCRelation}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCRelation"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCRelation}{}}}
 \subsection{Method \code{delDCRelation()}}{
 Deletes DC relation
 \subsection{Usage}{
@@ -1613,7 +3089,7 @@ Deletes DC relation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{relation}}{object of class \link{DCRelation}}
+\item{\code{relation}}{object of class \link{DCRelation} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1622,8 +3098,38 @@ Deletes DC relation
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCReplaces"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCReplaces}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCRelations"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCRelations}{}}}
+\subsection{Method \code{setDCRelations()}}{
+Set DC relations
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCRelations(relations)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{relations}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCRelations"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCRelations}{}}}
+\subsection{Method \code{getDCRelations()}}{
+Get DC relations
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCRelations()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCRelation}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCReplaces"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCReplaces}{}}}
 \subsection{Method \code{addDCReplaces()}}{
 Adds DC replaces
 \subsection{Usage}{
@@ -1633,7 +3139,7 @@ Adds DC replaces
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{replaces}}{object of class \link{DCReplaces}}
+\item{\code{replaces}}{object of class \link{DCReplaces} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1642,8 +3148,8 @@ Adds DC replaces
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCReplaces"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCReplaces}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCReplaces"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCReplaces}{}}}
 \subsection{Method \code{delDCReplaces()}}{
 Deletes DC replaces
 \subsection{Usage}{
@@ -1653,7 +3159,7 @@ Deletes DC replaces
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{replaces}}{object of class \link{DCReplaces}}
+\item{\code{replaces}}{object of class \link{DCReplaces} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1662,8 +3168,38 @@ Deletes DC replaces
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCRequires"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCRequires}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCReplaces"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCReplaces}{}}}
+\subsection{Method \code{setDCReplaces()}}{
+Set DC replaces
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCReplaces(replaces)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{replaces}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCReplaces"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCReplaces}{}}}
+\subsection{Method \code{getDCReplaces()}}{
+Get DC replaces
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCReplaces()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCReplaces}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCRequires"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCRequires}{}}}
 \subsection{Method \code{addDCRequires()}}{
 Adds DC requires
 \subsection{Usage}{
@@ -1673,7 +3209,7 @@ Adds DC requires
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{requires}}{object of class \link{DCRequires}}
+\item{\code{requires}}{object of class \link{DCRequires} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1682,8 +3218,8 @@ Adds DC requires
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCRequires"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCRequires}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCRequires"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCRequires}{}}}
 \subsection{Method \code{delDCRequires()}}{
 Deletes DC requires
 \subsection{Usage}{
@@ -1693,7 +3229,7 @@ Deletes DC requires
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{requires}}{object of class \link{DCRequires}}
+\item{\code{requires}}{object of class \link{DCRequires} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1702,8 +3238,38 @@ Deletes DC requires
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCRights"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCRights}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCRequires"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCRequires}{}}}
+\subsection{Method \code{setDCRequires()}}{
+Set DC requires
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCRequires(requires)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{requires}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCRequires"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCRequires}{}}}
+\subsection{Method \code{getDCRequires()}}{
+Get DC requires
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCRequires()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCRequires}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCRights}{}}}
 \subsection{Method \code{addDCRights()}}{
 Adds DC rights
 \subsection{Usage}{
@@ -1713,7 +3279,7 @@ Adds DC rights
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{rights}}{object of class \link{DCRights}}
+\item{\code{rights}}{object of class \link{DCRights} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1722,8 +3288,8 @@ Adds DC rights
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCRights"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCRights}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCRights}{}}}
 \subsection{Method \code{delDCRights()}}{
 Deletes DC rights
 \subsection{Usage}{
@@ -1733,7 +3299,7 @@ Deletes DC rights
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{rights}}{object of class \link{DCRights}}
+\item{\code{rights}}{object of class \link{DCRights} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1742,8 +3308,38 @@ Deletes DC rights
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCRightsHolder"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCRightsHolder}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCRights}{}}}
+\subsection{Method \code{setDCRights()}}{
+Set DC rights
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCRights(rights)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{rights}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCRights"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCRights}{}}}
+\subsection{Method \code{getDCRights()}}{
+Get DC rights
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCRights()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCRights}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCRightsHolder"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCRightsHolder}{}}}
 \subsection{Method \code{addDCRightsHolder()}}{
 Adds DC rightsHolder
 \subsection{Usage}{
@@ -1753,7 +3349,7 @@ Adds DC rightsHolder
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{rightsHolder}}{object of class \link{DCRightsHolder}}
+\item{\code{rightsHolder}}{object of class \link{DCRightsHolder} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1762,8 +3358,8 @@ Adds DC rightsHolder
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCRightsHolder"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCRightsHolder}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCRightsHolder"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCRightsHolder}{}}}
 \subsection{Method \code{delDCRightsHolder()}}{
 Deletes DC rightsHolder
 \subsection{Usage}{
@@ -1773,7 +3369,7 @@ Deletes DC rightsHolder
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{rightsHolder}}{object of class \link{DCRightsHolder}}
+\item{\code{rightsHolder}}{object of class \link{DCRightsHolder} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1782,8 +3378,38 @@ Deletes DC rightsHolder
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCSource"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCSource}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCRightsHolders"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCRightsHolders}{}}}
+\subsection{Method \code{setDCRightsHolders()}}{
+Set DC rights holders
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCRightsHolders(rightsHolders)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{rightsHolders}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCRightsHolders"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCRightsHolders}{}}}
+\subsection{Method \code{getDCRightsHolders()}}{
+Get DC rights holders
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCRightsHolders()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCRightsHolder}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCSource"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCSource}{}}}
 \subsection{Method \code{addDCSource()}}{
 Adds DC source
 \subsection{Usage}{
@@ -1793,7 +3419,7 @@ Adds DC source
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{source}}{object of class \link{DCSource}}
+\item{\code{source}}{object of class \link{DCSource} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1802,8 +3428,8 @@ Adds DC source
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCSource"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCSource}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCSource"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCSource}{}}}
 \subsection{Method \code{delDCSource()}}{
 Deletes DC source
 \subsection{Usage}{
@@ -1813,7 +3439,7 @@ Deletes DC source
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{source}}{object of class \link{DCSource}}
+\item{\code{source}}{object of class \link{DCSource} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1822,8 +3448,38 @@ Deletes DC source
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCSubject"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCSubject}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCSources"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCSources}{}}}
+\subsection{Method \code{setDCSources()}}{
+Set DC sources
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCSources(sources)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sources}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCSources"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCSources}{}}}
+\subsection{Method \code{getDCSources()}}{
+Get DC sources
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCSources()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCSource}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCSubject"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCSubject}{}}}
 \subsection{Method \code{addDCSubject()}}{
 Adds DC subject
 \subsection{Usage}{
@@ -1833,7 +3489,7 @@ Adds DC subject
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{subject}}{object of class \link{DCSubject}}
+\item{\code{subject}}{object of class \link{DCSubject} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1842,8 +3498,8 @@ Adds DC subject
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCSubject"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCSubject}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCSubject"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCSubject}{}}}
 \subsection{Method \code{delDCSubject()}}{
 Deletes DC subject
 \subsection{Usage}{
@@ -1853,7 +3509,7 @@ Deletes DC subject
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{subject}}{object of class \link{DCSubject}}
+\item{\code{subject}}{object of class \link{DCSubject} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1862,8 +3518,38 @@ Deletes DC subject
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCTableOfContents"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCTableOfContents}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCSubjects"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCSubjects}{}}}
+\subsection{Method \code{setDCSubjects()}}{
+Set DC subjects
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCSubjects(subjects)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{subjects}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCSubjects"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCSubjects}{}}}
+\subsection{Method \code{getDCSubjects()}}{
+Get DC Subjects
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCSubjects()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCSubject}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCTableOfContents"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCTableOfContents}{}}}
 \subsection{Method \code{addDCTableOfContents()}}{
 Adds DC tableOfContents
 \subsection{Usage}{
@@ -1873,7 +3559,7 @@ Adds DC tableOfContents
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{tableOfContents}}{object of class \link{DCTableOfContents}}
+\item{\code{tableOfContents}}{object of class \link{DCTableOfContents} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1882,8 +3568,8 @@ Adds DC tableOfContents
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCTableOfContents"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCTableOfContents}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCTableOfContents"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCTableOfContents}{}}}
 \subsection{Method \code{delDCTableOfContents()}}{
 Deletes DC tableOfContents
 \subsection{Usage}{
@@ -1893,7 +3579,7 @@ Deletes DC tableOfContents
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{tableOfContents}}{object of class \link{DCTableOfContents}}
+\item{\code{tableOfContents}}{object of class \link{DCTableOfContents} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1902,8 +3588,38 @@ Deletes DC tableOfContents
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCTemporal"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCTemporal}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCTablesOfContents"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCTablesOfContents}{}}}
+\subsection{Method \code{setDCTablesOfContents()}}{
+Set DC tables of contents
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCTablesOfContents(tablesOfContents)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{tablesOfContents}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCTablesOfContent"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCTablesOfContent}{}}}
+\subsection{Method \code{getDCTablesOfContent()}}{
+Get DC tables of contents
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCTablesOfContent()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCTableOfContents}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCTemporal"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCTemporal}{}}}
 \subsection{Method \code{addDCTemporal()}}{
 Adds DC temporal
 \subsection{Usage}{
@@ -1913,7 +3629,7 @@ Adds DC temporal
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{temporal}}{object of class \link{DCTemporal}}
+\item{\code{temporal}}{object of class \link{DCTemporal} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1922,8 +3638,8 @@ Adds DC temporal
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCTemporal"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCTemporal}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCTemporal"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCTemporal}{}}}
 \subsection{Method \code{delDCTemporal()}}{
 Deletes DC temporal
 \subsection{Usage}{
@@ -1933,7 +3649,7 @@ Deletes DC temporal
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{temporal}}{object of class \link{DCTemporal}}
+\item{\code{temporal}}{object of class \link{DCTemporal} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1942,8 +3658,38 @@ Deletes DC temporal
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCTitle"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCTitle}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCTemporals"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCTemporals}{}}}
+\subsection{Method \code{setDCTemporals()}}{
+Set DC temporals
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCTemporals(temporals)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{temporals}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCTemporals"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCTemporals}{}}}
+\subsection{Method \code{getDCTemporals()}}{
+Get DC temporals
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCTemporals()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCTemporal}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCTitle}{}}}
 \subsection{Method \code{addDCTitle()}}{
 Adds DC title
 \subsection{Usage}{
@@ -1953,7 +3699,7 @@ Adds DC title
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{title}}{object of class \link{DCTitle}}
+\item{\code{title}}{object of class \link{DCTitle} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1962,8 +3708,8 @@ Adds DC title
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCTitle"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCTitle}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCTitle}{}}}
 \subsection{Method \code{delDCTitle()}}{
 Deletes DC title
 \subsection{Usage}{
@@ -1973,7 +3719,7 @@ Deletes DC title
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{title}}{object of class \link{DCTitle}}
+\item{\code{title}}{object of class \link{DCTitle} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -1982,8 +3728,38 @@ Deletes DC title
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addDCType"></a>}}
-\if{latex}{\out{\hypertarget{method-addDCType}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCTitles"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCTitles}{}}}
+\subsection{Method \code{setDCTitles()}}{
+Set DC titles
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCTitles(titles)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{titles}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCTitles"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCTitles}{}}}
+\subsection{Method \code{getDCTitles()}}{
+Get DC titles
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCTitles()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCTitle}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-addDCType"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-addDCType}{}}}
 \subsection{Method \code{addDCType()}}{
 Adds DC type
 \subsection{Usage}{
@@ -1993,7 +3769,7 @@ Adds DC type
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{type}}{object of class \link{DCType}}
+\item{\code{type}}{object of class \link{DCType} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -2002,8 +3778,8 @@ Adds DC type
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delDCType"></a>}}
-\if{latex}{\out{\hypertarget{method-delDCType}{}}}
+\if{html}{\out{<a id="method-DCEntry-delDCType"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-delDCType}{}}}
 \subsection{Method \code{delDCType()}}{
 Deletes DC type
 \subsection{Usage}{
@@ -2013,7 +3789,7 @@ Deletes DC type
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{type}}{object of class \link{DCType}}
+\item{\code{type}}{object of class \link{DCType} or vector of class \link{character} and length 1}
 }
 \if{html}{\out{</div>}}
 }
@@ -2022,8 +3798,38 @@ Deletes DC type
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-DCEntry-setDCTypes"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-setDCTypes}{}}}
+\subsection{Method \code{setDCTypes()}}{
+Set DC Types
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$setDCTypes(types)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{types}}{vector of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-getDCTypes"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-getDCTypes}{}}}
+\subsection{Method \code{getDCTypes()}}{
+Get DC types
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCTypes()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+a list of objects of class \link{DCType}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

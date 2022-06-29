@@ -39,6 +39,15 @@ test_that("encoding/decoding DCEntry",{
   dcentry$addDCSource("Guidelines for implementing Dublin Core in XML - https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/")
   dcentry$addDCLicense("NONE")
   dcentry$addDCRights("MIT License")
+  dcentry$addDCHasPart("part1")
+  dcentry$addDCHasPart("part2")
+  dcentry$addDCHasVersion("0.2")
+  dcentry$addDCIsPartOf("CRAN")
+  dcentry$addDCIsPartOf("GitHub")
+  dcentry$addDCIsReferencedBy("CRAN")
+  dcentry$addDCIsReferencedBy("GitHub")
+  dcentry$addDCIsRequiredBy("zen4R")
+  dcentry$addDCIsRequiredBy("cloud4R")
 
   xml <- dcentry$encode()
   expect_is(dcentry, "DCEntry")
@@ -64,4 +73,10 @@ test_that("decoding Zenodo Dublin core",{
     length(dcxml_children),
     length(dcentry_xml_children)
   )
+})
+
+test_that("reading DC XML",{
+  dcfile <- "https://raw.githubusercontent.com/eblondel/atom4R/master/inst/extdata/examples/zenodo_dc_export.xml"
+  dc <- readDCEntry(dcfile)
+  expect_is(dc, "DCEntry")
 })

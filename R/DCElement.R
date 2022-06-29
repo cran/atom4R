@@ -20,7 +20,7 @@ DCElement <- R6Class("DCElement",
    private = list(
      dcTerms = function() {
        dcTermsVocabId <- "http://purl.org/dc/terms/"
-       terms <- getDCMIVocabulary(id = dcTermsVocabId)$get()
+       terms <- getDCMIVocabulary(id = dcTermsVocabId)$data
        sapply(terms$s, function(x){unlist(strsplit(x, dcTermsVocabId))[2]})
      },
      xmlElement = "_abstract_",
@@ -36,20 +36,24 @@ DCElement <- R6Class("DCElement",
      #'@param term term
      #'@param value value
      #'@param vocabulary vocabulary
-     initialize = function(xml = NULL, term = NULL, value = NULL, vocabulary = NULL){
+     #'@param extended extended
+     initialize = function(xml = NULL, term = NULL, value = NULL, vocabulary = NULL, extended = FALSE){
        super$initialize(xml = xml, element = term, wrap = FALSE)
        if(is.null(xml)){
-         if(!term %in% private$dcTerms()){
+         if(!extended) if(!term %in% private$dcTerms()){
            stop(sprintf("'%s' is not a valid Dublin Core term", term))
          }
          if(!is.null(vocabulary)){
            vocab <- getDCMIVocabulary(id = vocabulary)
+           if(is.null(vocab$data)){
+             vocab$fetch()
+           }
            if(is.null(vocab)){
              stop(sprintf("No controlled vocabulary for id '%s'", vocabulary))
            }
-           if(!value %in% vocab$get()$label){
+           if(!value %in% vocab$data$label){
              errMsg <- sprintf("Value '%s' not authorized by DCMI controlled vocabulary for term '%s'.\n", value, term)
-             errMsg <- paste0(errMsg, sprintf("Controlled vocabulary can be browsed in R with the following code:\ngetDCMIVocabulary(id = \"%s\")$get()", vocabulary))
+             errMsg <- paste0(errMsg, sprintf("Controlled vocabulary can be browsed in R with the following code:\nvocab = getDCMIVocabulary(id = \"%s\");\nvocab$fetch();\nvocab$data", vocabulary))
              stop(errMsg)
            }
          }
@@ -734,6 +738,70 @@ DCFormat <- R6Class("DCFormat",
   )
 )
 
+#' @name DCHasPart
+#' @title DCHasPart
+#' @description This class models an DublinCore 'hasPart' element
+#' @keywords Dublin Core 'hasPart' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'hasPart' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasPart
+#'
+DCHasPart <- R6Class("DCHasPart",
+  inherit = DCElement,
+  private = list(
+    xmlElement = "hasPart",
+    xmlNamespacePrefix = "DCTERMS",
+    document = FALSE
+  ),
+  public = list(
+
+    #'@description This method is used to create an Dublin core 'hasPart' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param dc use DC namespace?
+    initialize = function(xml = NULL, value = NULL, dc = FALSE){
+      if(dc) private$xmlNamespacePrefix = "DC"
+      super$initialize(xml = xml, term = private$xmlElement, value = value)
+    }
+  )
+)
+
+#' @name DCHasVersion
+#' @title DCHasVersion
+#' @description This class models an DublinCore 'hasVersion' element
+#' @keywords Dublin Core 'hasVersion' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'hasPart' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasVersion
+#'
+DCHasVersion <- R6Class("DCHasVersion",
+   inherit = DCElement,
+   private = list(
+     xmlElement = "hasVersion",
+     xmlNamespacePrefix = "DCTERMS",
+     document = FALSE
+   ),
+   public = list(
+
+     #'@description This method is used to create an Dublin core 'hasVersion' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
+     initialize = function(xml = NULL, value = NULL, dc = FALSE){
+       if(dc) private$xmlNamespacePrefix = "DC"
+       super$initialize(xml = xml, term = private$xmlElement, value = value)
+     }
+   )
+)
+
 #' @name DCIdentifier
 #' @title DCIdentifier
 #' @description This class models an DublinCore 'identifier' element
@@ -822,6 +890,166 @@ DCIssued <- R6Class("DCIssued",
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
+      super$initialize(xml = xml, term = private$xmlElement, value = value)
+    }
+  )
+)
+
+#' @name DCIsPartOf
+#' @title DCIsPartOf
+#' @description This class models an DublinCore 'isPartOf' element
+#' @keywords Dublin Core 'isPartOf' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isPartOf' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/isPartOf
+#'
+DCIsPartOf <- R6Class("DCIsPartOf",
+  inherit = DCElement,
+  private = list(
+    xmlElement = "isPartOf",
+    xmlNamespacePrefix = "DCTERMS",
+    document = FALSE
+  ),
+  public = list(
+
+    #'@description This method is used to create an Dublin core 'isPartOf' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param dc use DC namespace?
+    initialize = function(xml = NULL, value = NULL, dc = FALSE){
+      if(dc) private$xmlNamespacePrefix = "DC"
+      super$initialize(xml = xml, term = private$xmlElement, value = value)
+    }
+  )
+)
+
+#' @name DCIsReferencedBy
+#' @title DCIsReferencedBy
+#' @description This class models an DublinCore 'isReferencedBy' element
+#' @keywords Dublin Core 'isReferencedBy' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isReferencedBy' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/isReferencedBy
+#'
+DCIsReferencedBy <- R6Class("DCIsReferencedBy",
+  inherit = DCElement,
+  private = list(
+    xmlElement = "isReferencedBy",
+    xmlNamespacePrefix = "DCTERMS",
+    document = FALSE
+  ),
+  public = list(
+
+    #'@description This method is used to create an Dublin core 'isReferencedBy' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param dc use DC namespace?
+    initialize = function(xml = NULL, value = NULL, dc = FALSE){
+      if(dc) private$xmlNamespacePrefix = "DC"
+      super$initialize(xml = xml, term = private$xmlElement, value = value)
+    }
+  )
+)
+
+#' @name DCIsReplacedBy
+#' @title DCIsReplacedBy
+#' @description This class models an DublinCore 'isReplacedBy' element
+#' @keywords Dublin Core 'isReplacedBy' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isReplacedBy' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/isReplacedBy
+#'
+DCIsReplacedBy <- R6Class("DCIsReplacedBy",
+  inherit = DCElement,
+  private = list(
+    xmlElement = "isReplacedBy",
+    xmlNamespacePrefix = "DCTERMS",
+    document = FALSE
+  ),
+  public = list(
+
+    #'@description This method is used to create an Dublin core 'isReplacedBy' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param dc use DC namespace?
+    initialize = function(xml = NULL, value = NULL, dc = FALSE){
+      if(dc) private$xmlNamespacePrefix = "DC"
+      super$initialize(xml = xml, term = private$xmlElement, value = value)
+    }
+  )
+)
+
+#' @name DCIsRequiredBy
+#' @title DCIsRequiredBy
+#' @description This class models an DublinCore 'isRequiredBy' element
+#' @keywords Dublin Core 'isRequiredBy' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isRequiredBy' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/isRequiredBy
+#'
+DCIsRequiredBy <- R6Class("DCIsRequiredBy",
+  inherit = DCElement,
+  private = list(
+    xmlElement = "isRequiredBy",
+    xmlNamespacePrefix = "DCTERMS",
+    document = FALSE
+  ),
+  public = list(
+
+    #'@description This method is used to create an Dublin core 'isRequiredBy' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param dc use DC namespace?
+    initialize = function(xml = NULL, value = NULL, dc = FALSE){
+      if(dc) private$xmlNamespacePrefix = "DC"
+      super$initialize(xml = xml, term = private$xmlElement, value = value)
+    }
+  )
+)
+
+#' @name DCIsVersionOf
+#' @title DCIsVersionOf
+#' @description This class models an DublinCore 'isVersionOf' element
+#' @keywords Dublin Core 'isVersionOf' element
+#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isVersionOf' element
+#' @format \code{\link{R6Class}} object.
+#' @export
+#'
+#' @references
+#'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/isVersionOf
+#'
+DCIsVersionOf <- R6Class("DCIsVersionOf",
+  inherit = DCElement,
+  private = list(
+    xmlElement = "isVersionOf",
+    xmlNamespacePrefix = "DCTERMS",
+    document = FALSE
+  ),
+  public = list(
+
+    #'@description This method is used to create an Dublin core 'isVersionOf' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param dc use DC namespace?
+    initialize = function(xml = NULL, value = NULL, dc = FALSE){
+      if(dc) private$xmlNamespacePrefix = "DC"
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
   )

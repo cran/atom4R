@@ -30,25 +30,27 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{doc}}{doc}
 
 \item{\code{representation}}{representation}
+
+\item{\code{data}}{data}
 }
 \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{DCMIVocabulary$new()}}
-\item \href{#method-get}{\code{DCMIVocabulary$get()}}
-\item \href{#method-clone}{\code{DCMIVocabulary$clone()}}
+\item \href{#method-DCMIVocabulary-new}{\code{DCMIVocabulary$new()}}
+\item \href{#method-DCMIVocabulary-fetch}{\code{DCMIVocabulary$fetch()}}
+\item \href{#method-DCMIVocabulary-clone}{\code{DCMIVocabulary$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-DCMIVocabulary-new"></a>}}
+\if{latex}{\out{\hypertarget{method-DCMIVocabulary-new}{}}}
 \subsection{Method \code{new()}}{
 This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
    the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$new(id, doc, format)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$new(id, doc, format, fetch = TRUE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -59,27 +61,25 @@ This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
 \item{\code{doc}}{doc}
 
 \item{\code{format}}{format}
+
+\item{\code{fetch}}{fetch}
 }
 \if{html}{\out{</div>}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get"></a>}}
-\if{latex}{\out{\hypertarget{method-get}{}}}
-\subsection{Method \code{get()}}{
-Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
-   Returns an object of class \code{data.frame}
+\if{html}{\out{<a id="method-DCMIVocabulary-fetch"></a>}}
+\if{latex}{\out{\hypertarget{method-DCMIVocabulary-fetch}{}}}
+\subsection{Method \code{fetch()}}{
+Runs a Sparql query over the RDF vocabulary to fetch the vocabulary content.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$get()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$fetch()}\if{html}{\out{</div>}}
 }
 
-\subsection{Returns}{
-an object of class \code{data.frame}
-}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-DCMIVocabulary-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-DCMIVocabulary-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
