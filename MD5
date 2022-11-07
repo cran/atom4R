@@ -1,10 +1,10 @@
-880a58f7ead65603b24e9f3227d609bf *DESCRIPTION
+4b5d2e7c980aa2ab7653c06c36608d35 *DESCRIPTION
 4caa500961350433282ac48a5dcdd452 *LICENSE
 c621b623eff7019f1bc8c83edc091bd7 *NAMESPACE
-34389e6493ebb8ceed72eb61e9571fbd *NEWS.md
+39186d24afd2a37af797a8514c392d14 *NEWS.md
 187b2e7c107dd7d983dc36cd68ced1da *R/AtomAbstractObject.R
 7cc874f0037ce2bec2e1ee447ae1bd64 *R/AtomCategory.R
-5a0ed1fe1034313ecd6959fde68015d6 *R/AtomEntry.R
+d933dd6ca4573c6534086e9f82f0bb6f *R/AtomEntry.R
 57b6e40222f10e144a4ba3d4ea4c7fa7 *R/AtomFeed.R
 59f79cadd1e07e612c7bf008780b3f21 *R/AtomLink.R
 dcb3223e0486b9ea1ad37b15f689218d *R/AtomNamespace.R
@@ -12,7 +12,7 @@ dcb3223e0486b9ea1ad37b15f689218d *R/AtomNamespace.R
 e6a5d18972831f8a0f8450ee1533d393 *R/AtomPubClient.R
 c9a84a83de2f3d5917b51398dae35727 *R/AtomSchemas.R
 c3a6f3f8d8854f3b72dbac6261870db0 *R/DCElement.R
-7e26ad9159a72ab4246cfe0c304c8e76 *R/DCEntry.R
+345b3b5808ba569993fa88d0af1933cc *R/DCEntry.R
 82b05d950c115fe0c5f0c84e7dbb2363 *R/DCMIVocabulary.R
 cbc5db95c3c1b77b2ec46980de9a24af *R/SwordClient.R
 c57e6e0948d6394a50b35e7d208caf3c *R/SwordDataverseClient.R
@@ -22,7 +22,7 @@ c57e6e0948d6394a50b35e7d208caf3c *R/SwordDataverseClient.R
 3df1022e089a316f12fe6ae1aa3b2a4c *R/atom4R_logger.R
 87eb66cbd8772e85cea1faa70b0686c9 *R/profile.R
 bad36427f53ecc430b1dbd8efa975217 *R/readDCEntry.R
-88b9fe3a0e0513f2f4ed1b4535bde878 *README.md
+6289768a8238009822e333f9e7551ac2 *README.md
 043ff2e73aef1cbdf15aeda8a399316e *inst/extdata/schemas/atom/atom.xsd
 7175e86547feb85565e64ee8e0f57bd4 *inst/extdata/schemas/dc/dc.xsd
 77d50a7e6674a6fe882fb62fc21f5f85 *inst/extdata/schemas/dc/dcmitype.xsd
@@ -61,7 +61,7 @@ beb9a6ab7cd0c69942fbfb55401a8201 *man/DCDateCopyrighted.Rd
 b9d5e61cc5c1abba560795b99e63f832 *man/DCDescription.Rd
 a16a7955892ec52444295025e1306852 *man/DCEducationalLevel.Rd
 0d898d7da1515bfeb4127e85115a68ce *man/DCElement.Rd
-12889895c78ac65545080025307a58ba *man/DCEntry.Rd
+bff826a255d47081989bfd156ed91c2a *man/DCEntry.Rd
 4238c7a741136dd5c42e9542fb53c3e2 *man/DCExtent.Rd
 dfb5aea5536a8f50801d4950aba4d52f *man/DCFormat.Rd
 8d1a5c0687d2e987d8817a5b0683b0b4 *man/DCHasPart.Rd
