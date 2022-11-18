@@ -1,6 +1,6 @@
 Package: atom4R
-Version: 0.3-2
-Date: 2022-11-07
+Version: 0.3-3
+Date: 2022-11-18
 Title: Tools to Handle and Publish Metadata as 'Atom' XML Format
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
@@ -15,7 +15,7 @@ URL: https://github.com/eblondel/atom4R
 BugReports: https://github.com/eblondel/atom4R
 RoxygenNote: 7.2.1
 NeedsCompilation: no
-Packaged: 2022-11-07 08:09:04 UTC; manub
+Packaged: 2022-11-18 12:01:02 UTC; manub
 Author: Emmanuel Blondel [aut, cre] (<https://orcid.org/0000-0002-5870-5762>)
 Repository: CRAN
-Date/Publication: 2022-11-07 09:30:02 UTC
+Date/Publication: 2022-11-18 14:40:15 UTC

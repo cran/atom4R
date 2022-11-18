@@ -1,7 +1,7 @@
-4b5d2e7c980aa2ab7653c06c36608d35 *DESCRIPTION
+9d89ec2c3dfcf3300e76cca98946bad0 *DESCRIPTION
 4caa500961350433282ac48a5dcdd452 *LICENSE
 c621b623eff7019f1bc8c83edc091bd7 *NAMESPACE
-39186d24afd2a37af797a8514c392d14 *NEWS.md
+8b75c978215be8e45a78e3dc01f6724b *NEWS.md
 187b2e7c107dd7d983dc36cd68ced1da *R/AtomAbstractObject.R
 7cc874f0037ce2bec2e1ee447ae1bd64 *R/AtomCategory.R
 d933dd6ca4573c6534086e9f82f0bb6f *R/AtomEntry.R
@@ -10,7 +10,7 @@ d933dd6ca4573c6534086e9f82f0bb6f *R/AtomEntry.R
 dcb3223e0486b9ea1ad37b15f689218d *R/AtomNamespace.R
 63348b4d02ebcccb2d9682014ab98328 *R/AtomPerson.R
 e6a5d18972831f8a0f8450ee1533d393 *R/AtomPubClient.R
-c9a84a83de2f3d5917b51398dae35727 *R/AtomSchemas.R
+50f0c73042b09e1d6b2617d2b2f386d2 *R/AtomSchemas.R
 c3a6f3f8d8854f3b72dbac6261870db0 *R/DCElement.R
 345b3b5808ba569993fa88d0af1933cc *R/DCEntry.R
 82b05d950c115fe0c5f0c84e7dbb2363 *R/DCMIVocabulary.R
@@ -22,7 +22,7 @@ c57e6e0948d6394a50b35e7d208caf3c *R/SwordDataverseClient.R
 3df1022e089a316f12fe6ae1aa3b2a4c *R/atom4R_logger.R
 87eb66cbd8772e85cea1faa70b0686c9 *R/profile.R
 bad36427f53ecc430b1dbd8efa975217 *R/readDCEntry.R
-6289768a8238009822e333f9e7551ac2 *README.md
+1cd94c55d387fd9c38c8a69f12135683 *README.md
 043ff2e73aef1cbdf15aeda8a399316e *inst/extdata/schemas/atom/atom.xsd
 7175e86547feb85565e64ee8e0f57bd4 *inst/extdata/schemas/dc/dc.xsd
 77d50a7e6674a6fe882fb62fc21f5f85 *inst/extdata/schemas/dc/dcmitype.xsd
@@ -111,7 +111,7 @@ ceaefbf3d338385200996187d52c3128 *man/getDCMIVocabularies.Rd
 0d16a696909eb6bd06d48e7d28f48607 *man/getDCMIVocabulary.Rd
 2650211005a12ba34c12a8751c3ec4f0 *man/readDCEntry.Rd
 dc54e203e4fbd18f4f0c57cf8d68c4c4 *man/registerAtomNamespace.Rd
-e609048d0ada71217a955b1286b5faf2 *man/registerAtomSchema.Rd
+fde49f0fea47d7f932cf53a33d2e0cc2 *man/registerAtomSchema.Rd
 15aa08d33203d8726cc2795091fa0eb6 *man/setAtomNamespaces.Rd
 ad66df4eb9507962735ee124b8b9fc60 *man/setAtomSchemas.Rd
 3c44eddb50b2d0c1020d2d8f87e0695d *man/setDCMIVocabularies.Rd
