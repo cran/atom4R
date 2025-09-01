@@ -8,8 +8,8 @@
 #' @title SwordHalClient class
 #' @description This class models an Sword service client for HAL (Archives Houvertes)
 #' @keywords SWORD API Client
-#' @return Object of \code{\link{R6Class}} for modelling an Sword client
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Sword client
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @note Experimental
 #'
@@ -22,7 +22,7 @@ SwordHalClient <- R6Class("SwordHalClient",
    ),
    public = list(
 
-     #'@description This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.archives-ouvertes.fr/}) Client.
+     #'@description This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.science/}) Client.
       #'    By default the version is set to "2".
       #'
       #'    The \code{keyring_backend} can be set to use a different backend for storing
